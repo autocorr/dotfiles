@@ -1,0 +1,11 @@
+"" key mappings
+nnoremap j 5j
+nnoremap k 5k
+nnoremap l 5l
+nnoremap h 5h
+nnoremap <C-S-b> :sidebar Bookmarks<CR>
+let mapleader = ","
+
+"" completion
+set cpt=l
+
