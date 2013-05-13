@@ -8,7 +8,7 @@ fi
 export PATH=$PATH:/scisoft/bin:/home/bsvoboda/mygbtidl/bin
 export IDL_PATH="<IDL_PATH>"
 export IDL_PATH=${IDL_PATH}:+/usr/local/itt/idl:+/mnt/eld_data/scripts/idl
-export PYTHONPATH=/mnt/eld_data/scripts/py:/mnt/eld_data/scripts/besl
+export PYTHONPATH=${PYTHONPATH}:/mnt/eld_data/scripts/py:/mnt/eld_data/scripts/besl
 
 # Fasd
 eval "$(fasd --init auto)"

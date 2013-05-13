@@ -72,5 +72,6 @@ alias tmux='tmux -2'
 alias ds='pwd > /tmp/cwd'
 alias dr='cd "$(< /tmp/cwd)"'
 alias workdir='cd /mnt/eld_data'
+alias ipnb='ipython notebook --pylab inline'
 # vi
 alias vi_besl='vim -p /mnt/eld_data/scripts/besl/besl/*.py /mnt/eld_data/scripts/besl/besl/bplot/*.py'

@@ -3,6 +3,7 @@ My programs and extensions.
 CLI
 ===
 * cmus
+* git
 * htop
 * ipython
 * irssi
@@ -10,14 +11,16 @@ CLI
 * ranger
 * rtorrent
 * slurm
+* tig
 * tmux
 * vim
 
 GUI
 ===
+* apvlv
+* ds9
 * firefox
 * google-earth
-* ds9
 
 python
 ======

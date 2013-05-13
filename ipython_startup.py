@@ -1,11 +1,15 @@
 #!/usr/bin/env python
 
 # path for local packages
-import sys
-scripts_dir = '/mnt/eld_data/scripts/'
-paths = ['besl', 'astroquery', 'py']
-paths = [scripts_dir + path for path in paths]
-sys.path.extend(paths)
+try:
+    import besl
+except ImportError:
+    import sys
+    scripts_dir = '/mnt/eld_data/scripts/'
+    paths = ['besl', 'astroquery', 'py']
+    paths = [scripts_dir + path for path in paths]
+    sys.path.extend(paths)
+    print 'PYTHONPATH set incorrectly'
 
 # imports
 import besl
