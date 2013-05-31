@@ -60,6 +60,10 @@ vim
 ===
 * powerline
 * vim-latex
+* jedi-vim
+* command-t
+* vim-slime
+* syntastic
 
 firefox
 =======

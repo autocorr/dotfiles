@@ -6,7 +6,7 @@ try:
 except ImportError:
     import sys
     scripts_dir = '/mnt/eld_data/scripts/'
-    paths = ['besl', 'astroquery', 'py']
+    paths = ['besl', 'py']
     paths = [scripts_dir + path for path in paths]
     sys.path.extend(paths)
     print 'PYTHONPATH set incorrectly'

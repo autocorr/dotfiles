@@ -99,7 +99,7 @@ endif
 
 " Number of spaces that a pre-existing tab is equal to.
 " For the amount of space used for a new tab use shiftwidth.
-au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=8
+au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=4
 
 " What to use for an indent.
 " This will affect Ctrl-T and 'autoindent'.
@@ -180,3 +180,13 @@ set list listchars=tab:»\ ,trail:·
 
 " Set backup directory
 set backupdir=~/.vimbackups//
+
+" Jedi settings
+let g:jedi#auto_initialization = 1
+let g:jedi#auto_vim_configuration = 1
+let g:jedi#popup_on_dot = 0
+
+" Syntastic
+let g:syntastic_python_checkers = ['flake8', 'pyflakes', 'pep8', 'mccabe']
+
+
