@@ -1,0 +1,13 @@
+[user]
+	name = Brian Svoboda
+	email = bsvo@lavabit.com
+	diff = auto
+[credential]
+	helper = cache
+[color]
+	status = auto
+	branch = auto
+[alias]
+	show-graph = log --graph --abrev-commit --pretty=oneline
+[core]
+	editor = vim
