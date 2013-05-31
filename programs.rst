@@ -64,6 +64,7 @@ vim
 * command-t
 * vim-slime
 * syntastic
+* fugative
 
 firefox
 =======

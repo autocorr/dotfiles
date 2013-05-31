@@ -8,6 +8,6 @@
 	status = auto
 	branch = auto
 [alias]
-	show-graph = log --graph --abrev-commit --pretty=oneline
+	show-graph = log --graph --abbrev-commit --pretty=oneline
 [core]
 	editor = vim
