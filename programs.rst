@@ -21,6 +21,8 @@ GUI
 * ds9
 * firefox
 * google-earth
+* mathematica
+* mendeley
 
 python
 ======
@@ -51,20 +53,20 @@ python
 * pymc
 * pyregion
 * pywcs
-* ranger
 * scipy
 * sh
 * tables
 
 vim
 ===
-* powerline
-* vim-latex
-* jedi-vim
 * command-t
-* vim-slime
-* syntastic
+* diffconflicts
 * fugative
+* jedi-vim
+* powerline
+* syntastic
+* vim-latex
+* vim-slime
 
 firefox
 =======
@@ -75,6 +77,5 @@ firefox
 * it's all text!
 * pdf viewer
 * restartless restart
-* smoothwheel
 * vimperator
 * xmarks

@@ -11,3 +11,7 @@
 	show-graph = log --graph --abbrev-commit --pretty=oneline
 [core]
 	editor = vim
+[mergetool "diffconflicts"]
+	cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
+	trustExitCode = true
+	keepBackup = false
