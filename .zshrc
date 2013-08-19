@@ -2,6 +2,8 @@ setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
 #bindkey -v
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
 bindkey -e
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
@@ -23,6 +25,11 @@ autoload -Uz promptinit
 promptinit
 PROMPT=$'%m >>> '
 RPROMPT=$'[%~]'
+
+# Paths
+export PYTHONPATH=${PYTHONPATH}:/mnt/eld_data/scripts/py:/mnt/eld_data/scripts/besl:/mnt/eld_data/scripts/astroquery:/mnt/eld_data/scripts/photutils
+export GOROOT=/opt/go
+export PATH=$PATH:$GOROOT/bin
 
 # fasd
 eval "$(fasd --init auto)"
@@ -75,3 +82,26 @@ alias workdir='cd /mnt/eld_data'
 alias ipnb='ipython notebook --pylab inline'
 # vi
 alias vi_besl='vim -p /mnt/eld_data/scripts/besl/besl/*.py /mnt/eld_data/scripts/besl/besl/bplot/*.py'
+
+# Directory jump
+export MARKPATH=$HOME/.marks
+function j {
+	cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+function mark {
+	mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+}
+function unmark {
+	rm -i "$MARKPATH/$1"
+}
+function marks {
+	ls -l "$MARKPATH" | sed 's/  / /g' | cut -d ' ' -f9- | sed 's/ -/\t-/g' && echo
+}
+# Tab complete
+function _completemarks {
+	reply=($(ls $MARKPATH))
+}
+compctl -K _completemarks j
+compctl -K _completemarks unmark
+
+
