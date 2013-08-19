@@ -1,6 +1,6 @@
 Dotfiles
 ========
-:Author: Brian Svoboda (bsvo@lavabit.com)
+:Author: Brian Svoboda (svobodb@email.arizona.edu)
 :Source: https://github.com/autocorr/besl
 
 Brian Svoboda's personal dotfiles and other configuration files. The bits and
