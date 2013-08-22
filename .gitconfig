@@ -1,17 +1,25 @@
 [user]
-	name = Brian Svoboda
-	email = svobodb@email.arizona.edu
 	diff = auto
+	email = bones253@gmail.com
+	name = Brian Svoboda
+
 [credential]
 	helper = cache
+
 [color]
-	status = auto
 	branch = auto
-[alias]
-	show-graph = log --graph --abbrev-commit --pretty=oneline
+	status = auto
+
 [core]
 	editor = vim
+
 [mergetool "diffconflicts"]
 	cmd = diffconflicts vim $BASE $LOCAL $REMOTE $MERGED
-	trustExitCode = true
 	keepBackup = false
+	trustExitCode = true
+
+[github]
+	user = autocorr
+
+[alias]
+	show-graph = log --graph --abbrev-commit --pretty=oneline
