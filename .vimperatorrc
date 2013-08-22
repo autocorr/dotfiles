@@ -3,9 +3,20 @@ nnoremap j 5j
 nnoremap k 5k
 nnoremap l 5l
 nnoremap h 5h
+nnoremap <silent> zt :topselect<CR>
+nnoremap <silent> zb :bottomselect<CR>
+nnoremap <silent> zc :removeselect<CR>
 nnoremap <C-S-b> :sidebar Bookmarks<CR>
-let mapleader = ","
 
 "" completion
 set cpt=l
+let mapleader=","
 
+"" tabs
+set tabnumbers
+
+"" qmarks
+silent qmark a http://adsabs.harvard.edu/abstract_service.html
+silent qmark g https://github.com/autocorr
+silent qmark x http://arxiv.org/list/astro-ph/new
+silent qmark y https://news.ycombinator.com/
