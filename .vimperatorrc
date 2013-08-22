@@ -18,5 +18,6 @@ set tabnumbers
 "" qmarks
 silent qmark a http://adsabs.harvard.edu/abstract_service.html
 silent qmark g https://github.com/autocorr
+silent qmark w http://rasalas.as.arizona.edu/~bsvoboda/wiki/index.php/Main_Page
 silent qmark x http://arxiv.org/list/astro-ph/new
 silent qmark y https://news.ycombinator.com/
