@@ -55,6 +55,14 @@
 (ido-mode t)
 
 
+;; Org-mode
+(require 'org-install)
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+
+
 ;; Auto-complete
 (add-to-list 'load-path "~/.emacs.d./auto-complete-1.3.1")
 (require 'auto-complete)
