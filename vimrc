@@ -10,6 +10,9 @@ endif
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Pathogen
+call pathogen#infect()
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -155,8 +158,11 @@ set autoindent
 
 " Folding based on indentation: set foldmethod=indent
 
-" Pathogen
-call pathogen#infect()
+"" General keybindings
+inoremap <C-f> <C-o>l
+
+
+"" Package settings
 
 " vim-slime
 let g:slime_target = "tmux"
