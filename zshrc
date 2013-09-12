@@ -16,7 +16,6 @@ autoload -Uz compinit
 compinit
 
 #autoload -U colors
-#colors
 autoload -U colors zsh/terminfo
 colors
 
@@ -34,6 +33,7 @@ export PATH=$PATH:$GOROOT/bin
 # fasd
 eval "$(fasd --init auto)"
 
+### Completion ###
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
@@ -48,11 +48,10 @@ zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
-
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-### Alias commands ###
+### Alias ###
 # radio
 alias radio1="mplayer http://ice.somafm.com/groovesalad"
 alias radio2="mplayer http://207.200.96.225:8020"
@@ -83,6 +82,18 @@ alias ipnb='ipython notebook --pylab inline'
 # vi
 alias vi_besl='vim -p /mnt/eld_data/scripts/besl/besl/*.py /mnt/eld_data/scripts/besl/besl/bplot/*.py'
 
+### Functions ###
+# Python command-line calculator
+function calc {
+	if [[ $# -ge 2 ]]; then
+		echo $0: too many arguements
+	elif [[ $# -eq 1 ]]; then
+		python -c "from math import *; print $1"
+	else
+		echo "Usage: $0:t [pattern...]"
+		return 1
+	fi
+}
 # Directory jump
 export MARKPATH=$HOME/.marks
 function j {
