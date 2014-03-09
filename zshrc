@@ -26,9 +26,11 @@ PROMPT=$'%m >>> '
 RPROMPT=$'[%~]'
 
 # Paths
-export PYTHONPATH=${PYTHONPATH}:/mnt/eld_data/scripts/py:/mnt/eld_data/scripts/besl:/mnt/eld_data/scripts/astroquery:/mnt/eld_data/scripts/photutils
+export PYTHONPATH=${PYTHONPATH}:/mnt/eld_data/scripts/py:/mnt/eld_data/scripts/besl:/mnt/eld_data/scripts/astroquery:/mnt/eld_data/scripts/photutils:/mnt/eld_data/scripts/radex/Radex/radexgrid:/mnt/eld_data/scripts/astrodendro
+export MPLCONFIGDIR=~/.config/matplotlib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/multinest/lib
 export GOROOT=/opt/go
-export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOROOT/bin:/opt/bin
 
 # fasd
 eval "$(fasd --init auto)"
@@ -59,12 +61,14 @@ alias radio3="mplayer http://207.200.96.231:8010"
 alias radio4="mplayer http://ice.somafm.com/spacestation"
 alias radio5="mplayer http://u17.di.fm:80/di_spacemusic_aacplus"
 # ssh
-alias eld_data='sshfs svobodb@eldora.as.arizona.edu:/data0/svobodb/ /mnt/eld_data/'
+alias eld_data='sshfs svobodb@eldora.as.arizona.edu:/data0/svobodb/ /mnt/eld_data/ -o reconnect -C -o workaround=all'
 alias eld_data_off='fusermount -u /mnt/eld_data'
 alias eld_home='sshfs svobodb@eldora.as.arizona.edu:/home/svobodb/ /mnt/eld_home/'
 alias eld_home_off='fusermount -u /mnt/eld_home'
-alias eldora="ssh -XC4c arcfour,blowfish-cbc svobodb@eldora.as.arizona.edu"
-alias greenbank="ssh -XC4c arcfour,blowfish-cbc bsvoboda@ssh.gb.nrao.edu"
+alias eldora="ssh -XC4 svobodb@eldora.as.arizona.edu"
+alias greenbank="ssh -XC4 bsvoboda@ssh.gb.nrao.edu"
+alias hht="ssh -XC4 obs@smtoast.as.arizona.edu"
+alias rasalas="ssh -XC4 bsvoboda@rasalas.as.arizona.edu"
 # fasd
 alias v='f -e vim'
 alias m='f -e mplayer'
