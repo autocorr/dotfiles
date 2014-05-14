@@ -20,11 +20,10 @@ source "$fasd_cache"
 unset fasd_cache
 
 # User specific aliases and functions
-alias eldora='ssh -XC4c arcfour,blowfish-cbc svobodb@eldora.as.arizona.edu'
-alias greenbank='ssh -XC4c arcfour,blowfish-cbc bsvoboda@ssh.gb.nrao.edu'
+alias eldora='ssh -XC4 svobodb@eldora.as.arizona.edu'
+alias greenbank='ssh -XC4 bsvoboda@ssh.gb.nrao.edu'
 alias eld_data='sshfs svobodb@eldora.as.arizona.edu:/data0/svobodb/ /mnt/eld_data/'
 alias eld_home='sshfs svobodb@eldora.as.arizona.edu:/home/svobodb/ /mnt/eld_home/'
-alias workdir1='cd /mnt/eld_data/GBT/h2o_masers/data/'
 alias v='f -e vim'
 alias m='f -e mplayer'
 alias o='a -e xdg-open'
