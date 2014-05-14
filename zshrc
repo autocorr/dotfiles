@@ -84,11 +84,7 @@ eval "$(fasd --init auto)"
 
 ### Alias ###
 # radio
-alias radio1="mplayer http://ice.somafm.com/groovesalad"
-alias radio2="mplayer http://207.200.96.225:8020"
-alias radio3="mplayer http://207.200.96.231:8010"
-alias radio4="mplayer http://ice.somafm.com/spacestation"
-alias radio5="mplayer http://u17.di.fm:80/di_spacemusic_aacplus"
+alias groove="mplayer http://ice.somafm.com/groovesalad"
 # ssh
 alias eld_data='sshfs svobodb@eldora.as.arizona.edu:/data0/svobodb/ /mnt/eld_data/ -C -o reconnect,auto_cache,workaround=all'
 alias eld_data_off='fusermount -u /mnt/eld_data'
