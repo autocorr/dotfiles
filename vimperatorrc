@@ -3,10 +3,11 @@ nnoremap j 5j
 nnoremap k 5k
 nnoremap l 5l
 nnoremap h 5h
-nnoremap <silent> zt :topselect<CR>
-nnoremap <silent> zb :bottomselect<CR>
-nnoremap <silent> zc :removeselect<CR>
-nnoremap <C-S-b> :sidebar Bookmarks<CR>
+nnoremap zH 10h
+nnoremap zL 10l
+nnoremap zb :sidebar Bookmarks<CR>
+nnoremap zh :sidebar History<CR>
+nnoremap zx :sbclose<CR>
 
 "" completion
 set cpt=l
@@ -15,14 +16,20 @@ let mapleader=","
 "" tabs
 set tabnumbers
 
-"" qmarks
+"" general qmarks
+silent qmark c http://calendar.google.com
+silent qmark d http://drive.google.com
+silent qmark e http://catmail.arizona.edu
+silent qmark g http://github.com/autocorr
+silent qmark h http://autocorr.github.io
+silent qmark m http://maps.google.com
+silent qmark w http://en.wikipedia.org
+silent qmark W http://rasalas.as.arizona.edu/~bsvoboda/wiki/index.php/Main_Page
+silent qmark y http://news.ycombinator.com/
+"" astronomy qmarks
 silent qmark a http://adsabs.harvard.edu/abstract_service.html
-silent qmark c http://catmail.arizona.edu
-silent qmark g https://github.com/autocorr
 silent qmark n http://ned.ipac.caltech.edu/forms/bynames.html
 silent qmark s http://simbad.u-strasbg.fr/simbad/sim-fid
 silent qmark v http://vizier.u-strasbg.fr/viz-bin/VizieR
-silent qmark w http://rasalas.as.arizona.edu/~bsvoboda/wiki/index.php/Main_Page
 silent qmark x http://arxiv.org/list/astro-ph/new
 silent qmark X http://arxiv.org/list/astro-ph.GA/new
-silent qmark y https://news.ycombinator.com/
