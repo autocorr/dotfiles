@@ -25,13 +25,27 @@ except ImportError:
     import besl
 
 
+## Try switching backend to GTK
+from matplotlib import pyplot as plt
+try:
+    plt.switch_backend('GTKAgg')
+except RuntimeError:
+    import warnings
+    warnings.warn('Failed to switch `matplotlib` GTK backend.',
+                  RuntimeWarning)
+
+
 ## Import aliases
+# Numerical
 import numpy as np
 import numexpr as ne
 import pandas as pd
-import matplotlib.pyplot as plt
+# Astropy
 from astropy.io import fits
 from astropy import wcs
+from astropy import coordinates as coord
+from astropy import units as u
+# System
 from imp import reload
 
 
