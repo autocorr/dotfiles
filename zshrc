@@ -26,7 +26,7 @@ PROMPT=$'%m >>> '
 RPROMPT=$'[%~]'
 
 # Paths
-export PYTHONPATH=${PYTHONPATH}:/mnt/eld_data/scripts/py:/mnt/eld_data/scripts/besl:/mnt/eld_data/scripts/astroquery:/mnt/eld_data/scripts/photutils:/mnt/eld_data/scripts/radex/Radex/radexgrid:/mnt/eld_data/scripts/astrodendro
+export PYTHONPATH=${PYTHONPATH}:/mnt/eld_data/scripts/py:/mnt/eld_data/scripts/besl:/mnt/eld_data/scripts/astroquery:/mnt/eld_data/scripts/photutils:/mnt/eld_data/scripts/radex/Radex/radexgrid:/mnt/eld_data/scripts/astrodendro:/mnt/eld_data/scripts/plfit:/mnt/eld_data/scripts/click
 export MPLCONFIGDIR=~/.config/matplotlib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/multinest/lib
 export GOROOT=/opt/go
@@ -61,7 +61,7 @@ alias radio3="mplayer http://207.200.96.231:8010"
 alias radio4="mplayer http://ice.somafm.com/spacestation"
 alias radio5="mplayer http://u17.di.fm:80/di_spacemusic_aacplus"
 # ssh
-alias eld_data='sshfs svobodb@eldora.as.arizona.edu:/data0/svobodb/ /mnt/eld_data/ -o reconnect -C -o workaround=all'
+alias eld_data='sshfs svobodb@eldora.as.arizona.edu:/data0/svobodb/ /mnt/eld_data/ -C -o reconnect,auto_cache,workaround=all'
 alias eld_data_off='fusermount -u /mnt/eld_data'
 alias eld_home='sshfs svobodb@eldora.as.arizona.edu:/home/svobodb/ /mnt/eld_home/'
 alias eld_home_off='fusermount -u /mnt/eld_home'
@@ -74,8 +74,9 @@ alias v='f -e vim'
 alias m='f -e mplayer'
 alias o='a -e xdg-open'
 # ls
-alias ll='ls -l'
-alias la='ls -a'
+alias ls='ls -F --color'
+alias ll='ls -lF --color'
+alias la='ls -aF --color'
 alias grep='grep -n --color'
 # misc
 alias tmux='tmux -2'
@@ -83,8 +84,7 @@ alias ds='pwd > /tmp/cwd'
 alias dr='cd "$(< /tmp/cwd)"'
 alias workdir='cd /mnt/eld_data'
 alias ipnb='ipython notebook --pylab inline'
-# vi
-alias vi_besl='vim -p /mnt/eld_data/scripts/besl/besl/*.py /mnt/eld_data/scripts/besl/besl/bplot/*.py'
+alias pylab='ipython --pylab'
 
 ### Functions ###
 # Python command-line calculator
