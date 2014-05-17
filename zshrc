@@ -103,12 +103,15 @@ alias ls='ls -F --color'
 alias ll='ls -lF --color'
 alias la='ls -aF --color'
 alias grep='grep -n --color'
+# python
+alias ipnb='ipython notebook --pylab inline'
+alias pylab='ipython --pylab'
 # misc
 alias tmux='tmux -2'
 alias ds='pwd > /tmp/cwd'
 alias dr='cd "$(< /tmp/cwd)"'
 alias workdir='cd /mnt/eld_data'
-alias ipnb='ipython notebook --pylab inline'
-alias pylab='ipython --pylab'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 
