@@ -22,7 +22,7 @@ set backupdir=~/.vim/backups//
 set directory=~/.vim/swaps//
 if exists("&undodir")
 	set undodir=~/.vim/undo
-endif
+end
 if has("vms")
 	" Do not keep a backup file, use versions instead
 	set nobackup
@@ -214,5 +214,8 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 " UltiSnips
 let g:ultisnips_python_style = 'sphinx'
+" CtrlP
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_cmd = 'CtrlP'
 
 
