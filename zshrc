@@ -7,10 +7,6 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="quetzal"
 
-# Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -102,16 +98,20 @@ alias o='a -e xdg-open'
 alias ls='ls -F --color'
 alias ll='ls -lF --color'
 alias la='ls -aF --color'
-alias grep='grep -n --color'
 # python
 alias ipnb='ipython notebook --pylab inline'
 alias pylab='ipython --pylab'
 # misc
-alias tmux='tmux -2'
-alias ds='pwd > /tmp/cwd'
+alias cad='cal;date'
 alias dr='cd "$(< /tmp/cwd)"'
-alias workdir='cd /mnt/eld_data'
+alias ds='pwd > /tmp/cwd'
+alias grep='grep -n --color'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
-
-
+alias tmux='tmux -2'
+alias vn='vi notes.txt'
+alias workdir='cd /mnt/eld_data'
+# config
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias vimrc="vim ~/.vimrc"
