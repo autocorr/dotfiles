@@ -8,6 +8,7 @@ nnoremap zL 10l
 nnoremap zb :sidebar Bookmarks<CR>
 nnoremap zh :sidebar History<CR>
 nnoremap zx :sbclose<CR>
+nnoremap zt <C-S-E>  " tabgroups
 
 "" completion
 set cpt=l
