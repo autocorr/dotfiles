@@ -85,9 +85,9 @@ if has("autocmd")
 	" Also don't do it when the mark is in the first line, that is the default
 	" position when opening a file.
 	autocmd BufReadPost *
-	  \ if line("'\"") > 1 && line("'\"") <= line("$") |
-	  \   exe "normal! g`\"" |
-	  \ endif
+		\ if line("'\"") > 1 && line("'\"") <= line("$") |
+		\   exe "normal! g`\"" |
+		\ endif
 	augroup END
 else
 	" Always set autoindenting on
@@ -99,7 +99,7 @@ endif " has("autocmd")
 " Only define it when not defined already.
 if !exists(":DiffOrig")
 	command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+		\ | wincmd p | diffthis
 endif
 
 "" Python language specific
@@ -138,7 +138,7 @@ au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 " Wrap text after a certain number of characters
-" Python: 79 
+" Python: 79
 " C: 79
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h set textwidth=79
 " Turn off settings in 'formatoptions' relating to comment formatting.
@@ -155,9 +155,9 @@ au BufRead,BufNewFile *.c,*.h set formatoptions-=c formatoptions-=o formatoption
 " Python: yes
 " C: yes
 au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
-" Automatically indent based on file type: 
+" Automatically indent based on file type:
 filetype indent on
-" Keep indentation level from previous line: 
+" Keep indentation level from previous line:
 set autoindent
 " Folding based on indentation:
 "set foldmethod=indent
@@ -192,10 +192,15 @@ colors jellybeans
 "" Package settings
 " vim-slime
 let g:slime_target = "tmux"
-let g:slime_paste_file = tempname()
-" vim-powerline
-let g:Powerline_symbols = 'fancy'
+let g:slime_paste_file = "$HOME/.slime_paste"
+" vim-airline
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_powerline_fonts = 0
 set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
 " Set tab-complete menu to something readable
 highlight Pmenu ctermbg=238 gui=bold
 " Jedi
@@ -207,5 +212,7 @@ let g:syntastic_mode_map = {'mode': 'passive'}
 let g:syntastic_python_checkers = ['flake8', 'pyflakes', 'pep8', 'mccabe']
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+" UltiSnips
+let g:ultisnips_python_style = 'sphinx'
 
 
