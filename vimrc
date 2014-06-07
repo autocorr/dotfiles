@@ -197,6 +197,7 @@ let g:slime_python_ipython = 1
 let g:slime_no_mappings = 1
 xmap <leader>c <Plug>SlimeRegionSend
 nmap <leader>c <Plug>SlimeParagraphSend
+nmap <leader>cc <Plug>SlimeLineSend
 " vim-airline
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
