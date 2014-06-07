@@ -59,12 +59,13 @@ python
 
 vim
 ===
-* command-t
+* ctrlp-vim
 * diffconflicts
-* fugative
 * jedi-vim
-* powerline
 * syntastic
+* vim-airline
+* vim-autopep8
+* vim-fugative
 * vim-latex
 * vim-slime
 
