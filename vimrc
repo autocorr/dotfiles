@@ -193,6 +193,10 @@ colors jellybeans
 " vim-slime
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
+let g:slime_python_ipython = 1
+let g:slime_no_mappings = 1
+xmap <leader>c <Plug>SlimeRegionSend
+nmap <leader>c <Plug>SlimeParagraphSend
 " vim-airline
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
