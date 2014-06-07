@@ -59,15 +59,19 @@ python
 
 vim
 ===
+* auto-pairs
+* tComment
 * ctrlp-vim
 * diffconflicts
 * jedi-vim
+* jellybeans (color scheme)
 * syntastic
 * vim-airline
 * vim-autopep8
 * vim-fugative
 * vim-latex
 * vim-slime
+* vim-surround
 
 firefox
 =======
