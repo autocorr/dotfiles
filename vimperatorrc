@@ -17,6 +17,9 @@ let mapleader=","
 "" tabs
 set tabnumbers
 
+"" gui
+set gui=nonavigation
+
 "" general qmarks
 silent qmark c http://calendar.google.com
 silent qmark d http://drive.google.com
