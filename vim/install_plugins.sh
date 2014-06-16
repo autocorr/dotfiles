@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-cd ~/.vim/bundle
-git clone https://github.com/jiangmiao/auto-pairs
-git clone https://github.com/vim-scripts/tComment
-git clone https://github.com/kien/ctrlp.vim
-git clone https://github.com/davidhalter/jedi-vim
-git clone https://github.com/scrooloose/syntastic
-git clone https://github.com/bling/vim-airline
-git clone https://github.com/tpope/vim-fugitive
-git clone https://github.com/jpalardy/vim-slime
-git clone https://github.com/tpope/vim-surround
+BDIR=$HOME/.vim/bundle
+git clone https://github.com/jiangmiao/auto-pairs $BDIR/auto-pairs
+git clone https://github.com/vim-scripts/tComment $BDIR/tComment
+git clone https://github.com/kien/ctrlp.vim $BDIR/ctrlp.vim
+git clone https://github.com/davidhalter/jedi-vim $BDIR/jedi-vim
+git clone https://github.com/scrooloose/syntastic $BDIR/syntastic
+git clone https://github.com/bling/vim-airline $BDIR/vim-airline
+git clone https://github.com/tpope/vim-fugitive $BDIR/vim-fugitive
+git clone https://github.com/jpalardy/vim-slime $BIDR/vim-slime
+git clone https://github.com/tpope/vim-surround $BIDR/vim-surround
