@@ -2,11 +2,11 @@
 
 VIMDIR=$HOME/.vim
 if [ ! -d "$VIMDIR/autoload" ]; then
-	mkdir $VIMDIR/autoload
-	mkdir $VIMDIR/bundle
-	mkdir $VIMDIR/backups
-	mkdir $VIMDIR/swaps
-	mkdir $VIMDIR/colors
+	mkdir -p $VIMDIR/autoload
+	mkdir -p $VIMDIR/bundle
+	mkdir -p $VIMDIR/backups
+	mkdir -p $VIMDIR/swaps
+	mkdir -p $VIMDIR/colors
 	cp ./vimrc ~/.vimrc
 	cp ./jellybeans.vim $VIMDIR/colors
 	cp ./install_plugins.sh $VIMDIR/bundle
