@@ -5,12 +5,10 @@ CLI
 * cmus
 * git
 * htop
-* ipython
 * irssi
 * mutt
 * ranger
 * rtorrent
-* slurm
 * tig
 * tmux
 * vim
@@ -20,20 +18,21 @@ GUI
 * apvlv
 * ds9
 * firefox
+* gimp
 * google-earth
 * mathematica
 * mendeley
+* steam
+* stellarium
+* transmission
 
 python
 ======
 * APLpy
-* ATpy
-* CosmoloPy
 * IDLSave
 * IPy
 * Mayavi
 * PIL
-* asciitable
 * astLib
 * astropy
 * cosmocalc
@@ -49,10 +48,9 @@ python
 * pandas
 * pyds9
 * pyephem
-* pyfits
 * pymc
+* pypi-cli
 * pyregion
-* pywcs
 * scipy
 * sh
 * tables
@@ -77,10 +75,8 @@ firefox
 =======
 * ad-block plus
 * downthemall
-* ghostery
 * https-everywhere
 * it's all text!
-* pdf viewer
-* restartless restart
+* privacy badger
 * vimperator
 * xmarks
