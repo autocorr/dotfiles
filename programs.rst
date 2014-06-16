@@ -58,12 +58,13 @@ python
 vim
 ===
 * auto-pairs
-* tComment
 * ctrlp-vim
 * diffconflicts
 * jedi-vim
 * jellybeans (color scheme)
+* julia-vim
 * syntastic
+* tComment
 * vim-airline
 * vim-autopep8
 * vim-fugative
