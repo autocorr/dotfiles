@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-cp $HOME/.bashrc ./bashrc
-cp $HOME/.vimrc ./vim/vimrc
-cp $HOME/.zhsrc ./zsh/zshrc
-cp $HOME/.tmux.conf ./tmux.conf
-cp $HOME/.gitconfig ./gitconfig
+cp -f $HOME/.bashrc ./bashrc
+cp -f $HOME/.vimrc ./vim/vimrc
+cp -f $HOME/.zhsrc ./zsh/zshrc
+cp -f $HOME/.tmux.conf ./tmux.conf
+cp -f $HOME/.gitconfig ./gitconfig
