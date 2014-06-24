@@ -101,6 +101,10 @@ alias la='ls -aF --color'
 # python
 alias ipnb='ipython notebook --pylab inline'
 alias pylab='ipython --pylab'
+# config
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias vimrc="vim ~/.vimrc"
 # misc
 alias cad='cal;date'
 alias dr='cd "$(< /tmp/cwd)"'
@@ -111,7 +115,4 @@ alias pbpaste='xclip -selection clipboard -o'
 alias tmux='tmux -2'
 alias vn='vi notes.txt'
 alias workdir='cd /mnt/eld_data'
-# config
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-alias vimrc="vim ~/.vimrc"
+alias jl='~/julia/julia'
