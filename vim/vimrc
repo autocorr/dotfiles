@@ -187,8 +187,9 @@ function! StripWhitespace()
 	call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
-" Highlight current line
+" Highlight current line and remove highlighting
 nnoremap <silent> <leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
+nnoremap <silent> <leader>L :call clearmatches()<CR>
 
 
 "" Colors
