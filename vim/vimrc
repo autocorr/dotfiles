@@ -163,6 +163,10 @@ set autoindent
 "set foldmethod=indent
 
 
+"" Julia language specific
+autocmd Filetype julia setlocal ts=4 sts=4 sw=4 expandtab
+
+
 "" Keybindings
 inoremap <C-f> <C-o>l
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
@@ -222,5 +226,3 @@ let g:ultisnips_python_style = 'sphinx'
 " CtrlP
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
-
-
