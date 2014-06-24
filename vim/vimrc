@@ -32,8 +32,10 @@ else
 endif
 " Keep 50 lines of command line history
 set history=50
-" Show the cursor position all the time
+" Show the cursor position row/column
 set ruler
+" Highlight current line
+set cursorline
 " Show line numbers
 set number
 " Show the filename in the window titlebar
@@ -185,6 +187,8 @@ function! StripWhitespace()
 	call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
+" Highlight current line
+nnoremap <silent> <leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
 
 
 "" Colors
