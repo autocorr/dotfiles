@@ -99,8 +99,13 @@ alias ls='ls -F --color'
 alias ll='ls -lF --color'
 alias la='ls -aF --color'
 # python
+alias ipy='ipython console'
+alias pylab='ipython console --pylab'
 alias ipnb='ipython notebook --pylab inline'
-alias pylab='ipython --pylab'
+# julia
+alias jl='~/julia/julia'
+alias ijl='ipython console --profile julia'
+alias ijnb='ipython notebook --profile julia'
 # config
 alias zshrc="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
@@ -124,4 +129,3 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias tmux='tmux -2'
 alias vn='vi notes.txt'
-alias jl='~/julia/julia'
