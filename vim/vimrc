@@ -3,12 +3,17 @@
 set nocompatible
 " 256 Color terminal
 set t_Co=256
+syntax on
+set hlsearch
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
 	finish
 endif
 " Pathogen
+filetype off
 call pathogen#infect()
+call pathogen#helptags()
+filetype plugin indent on
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 " Set line-break at 79 char
@@ -48,18 +53,14 @@ set incsearch
 if has('mouse')
 	set mouse=a
 endif
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-	syntax on
-	set hlsearch
-endif
+
 
 "" Scrolling
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 set sidescrolloff=15
 set sidescroll=1
+
 
 "" Wildmode completion
 set wildmode=list:longest
@@ -68,14 +69,10 @@ set wildignore=*.o,*.obj,*.pyc
 set wildignore+=*vim/backups*
 set wildignore+=*.png,*.jpg,*.gif
 
+
 "" Automatic commands
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
-	" Enable file type detection.
-	" Use the default filetype settings, so that mail gets 'tw' set to 72,
-	" 'cindent' is on in C files, etc.
-	" Also load indent files, to automatically do language-dependent indenting.
-	filetype plugin indent on
 	" Put these in an autocmd group, so that we can delete them easily.
 	augroup vimrcEx
 	au!
@@ -96,73 +93,13 @@ else
 	set autoindent
 endif " has("autocmd")
 
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
+" Convenient command to see the difference between the current buffer
+" and the file it was loaded from, thus the changes you made.  Only
+" define it when not defined already.
 if !exists(":DiffOrig")
 	command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		\ | wincmd p | diffthis
 endif
-
-"" Python language specific
-" All setting are protected by 'au' ('autocmd') statements.  Only files ending
-" in .py or .pyw will trigger the Python settings while files ending in *.c or
-" *.h will trigger the C settings.  This makes the file "safe" in terms of only
-" adjusting settings for Python and C files.
-"
-" Only basic settings needed to enforce the style guidelines are set.
-" Some suggested options are listed but commented out at the end of this file.
-"
-" Number of spaces that a pre-existing tab is equal to.
-" For the amount of space used for a new tab use shiftwidth.
-au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=4
-" What to use for an indent.
-" This will affect Ctrl-T and 'autoindent'.
-" Python: 4 spaces
-" C: tabs (pre-existing files) or 4 spaces (new files)
-au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
-au BufRead,BufNewFile *.py,*.pyw set expandtab
-fu Select_c_style()
-	if search('^\t', 'n', 150)
-		set shiftwidth=8
-		set noexpandtab
-	el
-		set shiftwidth=4
-		set expandtab
-	en
-endf
-au BufRead,BufNewFile *.c,*.h call Select_c_style()
-au BufRead,BufNewFile Makefile* set noexpandtab
-" Use the below highlight group when displaying bad whitespace is desired.
-highlight BadWhitespace ctermbg=red guibg=red
-" Display tabs at the beginning of a line in Python mode as bad.
-au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
-" Make trailing whitespace be flagged as bad.
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-" Wrap text after a certain number of characters
-" Python: 79
-" C: 79
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h set textwidth=79
-" Turn off settings in 'formatoptions' relating to comment formatting.
-" - c : do not automatically insert the comment leader when wrapping based on
-"    'textwidth'
-" - o : do not insert the comment leader when using 'o' or 'O' from command mode
-" - r : do not insert the comment leader when hitting <Enter> in insert mode
-" Python: not needed
-" C: prevents insertion of '*' at the beginning of every line in a comment
-au BufRead,BufNewFile *.c,*.h set formatoptions-=c formatoptions-=o formatoptions-=r
-" Use UNIX (\n) line endings.
-" Only used for new files so as to not force existing files to change their
-" line endings.
-" Python: yes
-" C: yes
-au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
-" Automatically indent based on file type:
-filetype indent on
-" Keep indentation level from previous line:
-set autoindent
-" Folding based on indentation:
-"set foldmethod=indent
 
 
 "" Julia language specific
@@ -188,8 +125,8 @@ function! StripWhitespace()
 endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
 " Highlight current line and remove highlighting
-nnoremap <silent> <leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
-nnoremap <silent> <leader>L :call clearmatches()<CR>
+nnoremap <silent> <leader>m ml:execute 'match Search /\%'.line('.').'l/'<CR>
+nnoremap <silent> <leader>M :call clearmatches()<CR>
 
 
 "" Colors
@@ -199,6 +136,9 @@ colors jellybeans
 
 
 "" Package settings
+" pymode
+let g:pymode_lint = 0
+let g:pymode_rope = 0
 " vim-slime
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
