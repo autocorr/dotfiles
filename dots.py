@@ -8,7 +8,7 @@ parser = argparse.ArgumentParser(prog='dots', description='Manage dotfiles.')
 parser.add_argument('--torepo', action='store_true',
                     help='Copy dots to repo from ~/')
 parser.add_argument('--tohome', action='store_true',
-                    help='Copy dots from ~/ to repo')
+                    help='Copy dots to ~/ from repo')
 args = parser.parse_args()
 
 
