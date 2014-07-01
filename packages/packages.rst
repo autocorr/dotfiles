@@ -1,4 +1,7 @@
-My programs and extensions.
+Pacakges
+========
+Packages, programs, and extensions for configuring new systems.
+
 
 CLI
 ===
@@ -6,37 +9,53 @@ CLI
 * git
 * htop
 * irssi
+* julia
 * mutt
 * ranger
+* redshift
 * rtorrent
 * tig
 * tmux
 * vim
+* zsh
+
 
 GUI
 ===
-* apvlv
-* ds9
 * firefox
 * gimp
 * google-earth
 * mathematica
 * mendeley
+* nx / nomachine
+* pycharm
+* saods9
+* skype
 * steam
 * stellarium
+* thunderbird
 * transmission
+* virtualbox
+* vlc
+* wine
+* xchat
+
+
+emulators
+=========
+* desmume
+* dolphin-emulator
+* fceux
+* mupen64plus
+* pcsxr
+* visualboyadvance-gtk
+* zsnes
+
 
 python
 ======
-* APLpy
-* IDLSave
-* IPy
-* Mayavi
-* PIL
-* astLib
-* astropy
-* cosmocalc
-* emcee
+Essential packages
+------------------
 * grin
 * ipdb
 * ipython
@@ -44,16 +63,32 @@ python
 * nose
 * numexpr
 * numpy
-* pIDLy
 * pandas
+* pypi-cli
+* scipy
+
+Other
+-----
+* IPy
+* blaze
+* numba
+* pillow
+* sh
+* tables
+
+Astronomy related
+-----------------
+* APLpy
+* IDLSave
+* astropy
+* emcee
+* pIDLy
 * pyds9
 * pyephem
 * pymc
-* pypi-cli
 * pyregion
-* scipy
-* sh
-* tables
+* pysao
+
 
 vim
 ===
@@ -72,6 +107,7 @@ vim
 * vim-slime
 * vim-surround
 
+
 firefox
 =======
 * ad-block plus
@@ -80,4 +116,11 @@ firefox
 * it's all text!
 * privacy badger
 * vimperator
-* xmarks
+
+
+theme
+=====
+* gtk: ambiance-grey
+* icons: faenza-radiance
+* cursor: dmz-white
+* font: inconsolata
