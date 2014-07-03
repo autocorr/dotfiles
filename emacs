@@ -112,4 +112,5 @@
 (add-hook 'python-mode-hook 'highlight-indentation)
 
 
-
+;;; Julia-lang
+(require 'julia-mode)
