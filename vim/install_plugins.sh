@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 BDIR=$HOME/.vim/bundle
-curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+wget https://tpo.pe/pathogen.vim $HOME/.vim/autoload/pathogen.vim
 git clone https://github.com/jiangmiao/auto-pairs $BDIR/auto-pairs
 git clone https://github.com/vim-scripts/tComment $BDIR/tComment
 git clone https://github.com/kien/ctrlp.vim $BDIR/ctrlp.vim

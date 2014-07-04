@@ -13,7 +13,7 @@ args = parser.parse_args()
 
 
 dots = ['bashrc',
-        'emacs',
+        'emacs/emacs',
         'gitconfig',
         'tcshrc',
         'tmux.conf',
