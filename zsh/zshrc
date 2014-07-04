@@ -72,8 +72,7 @@ HISTFILE=~/.zsh_history
 export PYTHONPATH=${PYTHONPATH}:/mnt/eld_data/scripts/py:/mnt/eld_data/scripts/besl:/mnt/eld_data/scripts/astroquery:/mnt/eld_data/scripts/photutils:/mnt/eld_data/scripts/radex/Radex/radexgrid:/mnt/eld_data/scripts/astrodendro:/mnt/eld_data/scripts/plfit:/mnt/eld_data/scripts/click
 export MPLCONFIGDIR=~/.config/matplotlib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/multinest/lib
-export GOROOT=/opt/go
-export PATH=$PATH:$GOROOT/bin:/opt/bin
+export PATH=$PATH:/opt/bin
 
 # fasd
 eval "$(fasd --init auto)"

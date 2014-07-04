@@ -30,6 +30,7 @@ silent qmark m http://maps.google.com
 silent qmark w http://en.wikipedia.org
 silent qmark W http://rasalas.as.arizona.edu/~bsvoboda/wiki/index.php/Main_Page
 silent qmark y http://news.ycombinator.com/
+silent qmark Y http://news.ycombinator.com/show
 "" astronomy qmarks
 silent qmark a http://adsabs.harvard.edu/abstract_service.html
 silent qmark n http://ned.ipac.caltech.edu/forms/bynames.html
