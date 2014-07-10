@@ -103,7 +103,7 @@ alias ipy='ipython console'
 alias pylab='ipython console --pylab'
 alias ipnb='ipython notebook --pylab inline'
 # julia
-alias jl='~/julia/julia'
+alias jl='julia'
 alias ijl='ipython console --profile julia'
 alias ijnb='ipython notebook --profile julia'
 # config
