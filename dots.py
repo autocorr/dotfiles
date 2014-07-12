@@ -20,6 +20,7 @@ dots = ['bashrc',
         'vim/vimrc',
         'vimperatorrc',
         'zsh/zshrc',
+        'htoprc',
         ]
 
 
