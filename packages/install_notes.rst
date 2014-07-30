@@ -25,6 +25,8 @@ System
   * Install ``gnome-tweak-tool`` (install_gui.sh)
   * Typing -> Caps Lock Behavior
 
+* Settings -> Screensaver, lock 1m after screensaver
+
 
 Python
 ------
