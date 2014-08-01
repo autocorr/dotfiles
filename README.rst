@@ -3,10 +3,10 @@ Dotfiles
 :Author: Brian Svoboda (svobodb@email.arizona.edu)
 :Source: https://github.com/autocorr/besl
 
-Brian Svoboda's personal dotfiles and other configuration files. The bits and
-pieces of code making up these files has slowly been accreted, like most
-dotfiles, from lines of code off the web. I don't take any personal credit for
-the content.
+My personal configuration files. The bits and pieces of code making up these
+files has slowly been accreted from lines of code off the web. The `dots.py`
+script will copy a selection of files to and from the repository. Other scripts
+are included to setup applications on new systems.
 
 License
 =======
