@@ -25,7 +25,12 @@ System
   * Install ``gnome-tweak-tool`` (install_gui.sh)
   * Typing -> Caps Lock Behavior
 
-* Settings -> Screensaver, lock 1m after screensaver
+* Settings -> Screensaver, lock 1 min after screensaver
+
+* Add keyboard shortcuts
+
+  * Settings -> Keyboard -> Shortcuts -> Sound and Media
+  * Add shortcuts for mute/volume-up/volume-down
 
 
 Python
