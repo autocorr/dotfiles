@@ -115,6 +115,7 @@ firefox
 * https-everywhere
 * it's all text!
 * privacy badger
+* tree style tabs
 * vimperator
 
 
