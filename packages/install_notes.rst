@@ -100,5 +100,6 @@ Ubuntu Specific
 
   * ``sudo apt-get install compizconfig-settings-manager``
   * Utility -> Workarounds -> "Force synchronization between X and GLX"
+  * Utility -> Workarounds -> "Force full screen redraws (buffer swap) on repaint"
 
 
