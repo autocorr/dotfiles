@@ -94,3 +94,11 @@ Mac Specific
   * ``sudo apt-get install macfanctld``
 
 
+Ubuntu Specific
+---------------
+* Flickering video with nvidia drivers
+
+  * ``sudo apt-get install compizconfig-settings-manager``
+  * Utility -> Workarounds -> "Force synchronization between X and GLX"
+
+
