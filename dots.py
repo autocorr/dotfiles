@@ -39,7 +39,10 @@ def copy_dot(to_repo=True):
         src = path.expanduser('~/.' + base)
         dst = path.abspath('./' + rpath)
         if to_repo:
-            sh.copyfile(src, dst)
+            if path.isfile(src):
+                sh.copyfile(src, dst)
+            else:
+                print ':: skipping: {0}'.format(base)
         else:
             sh.copyfile(dst, src)
 
