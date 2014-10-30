@@ -28,7 +28,7 @@ except ImportError:
 ## Try switching backend to GTK
 from matplotlib import pyplot as plt
 try:
-    plt.switch_backend('GTKAgg')
+    plt.switch_backend('agg')
 except RuntimeError:
     import warnings
     warnings.warn('Failed to switch `matplotlib` GTK backend.',
