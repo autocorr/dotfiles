@@ -86,6 +86,8 @@ alias eldfs='sshfs svobodb@eldora.as.arizona.edu:/data0/svobodb/ /mnt/eld_data/ 
 alias eldfs_off='fusermount -u /mnt/eld_data'
 alias eldfs_home='sshfs svobodb@eldora.as.arizona.edu:/home/svobodb/ /mnt/eld_home/'
 alias eldfs_home_off='fusermount -u /mnt/eld_home'
+alias rasfs='sshfs svobodb@rasalas.as.arizona.edu:/home/svobodb/ /mnt/ras_data/ -C -o reconnect,auto_cache,workaround=all'
+alias rasfs_off='fusermount -u /mnt/ras_data'
 alias eldora="ssh -XC4 svobodb@eldora.as.arizona.edu"
 alias greenbank="ssh -XC4 bsvoboda@ssh.gb.nrao.edu"
 alias hht="ssh -XC4 obs@smtoast.as.arizona.edu"
