@@ -79,6 +79,12 @@ export PATH=$PATH:/opt/bin:~/code/bin:~/code/mygbtidl/gbtidl
 eval "$(fasd --init auto)"
 
 ### Alias ###
+function scprt {
+	scp $1 svobodb@rasalas.as.arizona.edu:/home/svobodb/Downloads
+}
+function scprf {
+	scp svobodb@rasalas.as.arizona.edu:/home/svobodb/$1 .
+}
 # radio
 alias groove="mplayer http://ice.somafm.com/groovesalad"
 # ssh
