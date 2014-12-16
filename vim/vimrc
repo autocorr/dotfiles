@@ -171,3 +171,6 @@ let g:ultisnips_python_style = 'sphinx'
 " CtrlP
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
+" Easy Align
+vmap <Enter> <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
