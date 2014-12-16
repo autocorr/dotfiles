@@ -13,3 +13,4 @@ git clone https://github.com/jpalardy/vim-slime $BDIR/vim-slime
 git clone https://github.com/tpope/vim-surround $BDIR/vim-surround
 git clone https://github.com/JuliaLang/julia-vim $BDIR/julia-vim
 git clone https://github.com/klen/python-mode.git $BDIR/python-mode
+git clone https://github.com/junegunn/vim-easy-align.git $BDIR/vim-easy-align
