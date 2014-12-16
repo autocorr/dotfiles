@@ -79,6 +79,15 @@ export PATH=$PATH:/opt/bin:~/code/bin:~/code/mygbtidl/gbtidl:~/.cabal/bin
 eval "$(fasd --init auto)"
 
 ### Alias ###
+function rpush {
+	rscp $1 svobodb@rasalas.as.arizona.edu:/home/svobodb/Downloads
+}
+function rpull {
+	scp svobodb@rasalas.as.arizona.edu:/home/svobodb/$1 .
+}
+function rwget {
+	ssh -t svobodb@rasalas.as.arizona.edu "wget -P /home/svobodb/Downloads/ '$1'"
+}
 # radio
 alias groove="mplayer http://ice.somafm.com/groovesalad"
 # ssh
@@ -100,6 +109,9 @@ alias o='a -e xdg-open'
 alias ls='ls -F --color'
 alias ll='ls -lF --color'
 alias la='ls -aF --color'
+function dls {
+	echo `ls -l | grep "^d" | awk '{print $9}' | tr -d "/"`
+}
 # python
 alias ipy='ipython console'
 alias pylab='ipython console --pylab'
