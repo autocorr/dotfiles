@@ -1,4 +1,4 @@
-sudo apt-get install ghc cabal-install
+sudo apt-get install ghc hdevtools cabal-install
 sudo apt-get install libghc-bzlib-dev libghc-haskell-src-dev
 chmod g-w ~/.ghc
 cp ../ghci.conf ~/.ghc/ghci.conf
