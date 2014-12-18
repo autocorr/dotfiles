@@ -124,16 +124,6 @@ alias ijnb='ipython notebook --profile julia'
 alias zshrc="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias vimrc="vim ~/.vimrc"
-# dirs
-alias eld=/mnt/eld_data
-alias ebesl=$ecode/besl/besl
-alias ebgps=$eld/BGPS
-alias ecats=$eld/Catalogs
-alias ecode=$eld/scripts
-alias edata=$eld/Data
-alias edocs=$eld/Documents
-alias edotf=$ecode/dotfiles
-alias etemp=$eld/temp
 # misc
 alias cad='cal;date'
 alias dr='cd "$(< /tmp/cwd)"'
