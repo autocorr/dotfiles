@@ -19,6 +19,7 @@ let mapleader=","
 
 "" gui
 set gui=nonavigation
+set scrollbars=false
 
 "" general qmarks
 silent qmark c http://calendar.google.com
