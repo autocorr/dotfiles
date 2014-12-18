@@ -26,7 +26,6 @@ import XMonad.Util.EZConfig
 import XMonad.Actions.Warp
 import Data.Ratio
 
-
 myTerminal    = "gnome-terminal"
 myScreenLock  = "/usr/bin/gnome-screensaver-command -l"
 myBorderWidth = 1
@@ -82,9 +81,9 @@ myKeys = \conf -> mkKeymap conf $
         | (i, j) <- zip (map show [1..9]) (XMonad.workspaces conf)
         , (m, f) <- [("M-", W.view), ("M-S-", W.shift)]
     ]
-    where
-        nextNonEmptyWS = moveTo Next (WSIs (liftM (not .) isVisible))
-        prevNonEmptyWS = moveTo Prev (WSIs (liftM (not .) isVisible))
+  where
+    nextNonEmptyWS = moveTo Next (WSIs (liftM (not .) isVisible))
+    prevNonEmptyWS = moveTo Prev (WSIs (liftM (not .) isVisible))
 
 isVisible :: X (WindowSpace -> Bool)
 isVisible = do
@@ -121,27 +120,27 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((controlMask .|. modMask, button5), nextNonEmptyWS)
     , ((controlMask .|. modMask, button4), prevNonEmptyWS)
     ]
-    where
-        nextNonEmptyWS = \_ -> moveTo Next (WSIs (liftM (not .) isVisible))
-        prevNonEmptyWS = \_ -> moveTo Prev (WSIs (liftM (not .) isVisible))
+  where
+    nextNonEmptyWS = \_ -> moveTo Next (WSIs (liftM (not .) isVisible))
+    prevNonEmptyWS = \_ -> moveTo Prev (WSIs (liftM (not .) isVisible))
 
 myLayout = avoidStrutsOn[U] $ tiled
     ||| tabs
     ||| Mirror tiled
     ||| magnify Grid
-    where
-        -- default tiling algorithm partitions the screen into two panes
-        tiled   = ResizableTall nmaster delta ratio []
-        -- The default number of windows in the master pane
-        nmaster = 1
-        -- Default proportion of screen occupied by master pane
-        ratio   = 8 % 13
-        -- Percent of screen to increment by when resizing panes
-        delta   = 3 % 100
-        -- tabbed layout
-        tabs = tabbed shrinkText myTheme
-        -- magnification in grid
-        magnify = magnifiercz (13%10)
+  where
+    -- default tiling algorithm partitions the screen into two panes
+    tiled   = ResizableTall nmaster delta ratio []
+    -- The default number of windows in the master pane
+    nmaster = 1
+    -- Default proportion of screen occupied by master pane
+    ratio   = 8 % 13
+    -- Percent of screen to increment by when resizing panes
+    delta   = 3 % 100
+    -- tabbed layout
+    tabs = tabbed shrinkText myTheme
+    -- magnification in grid
+    magnify = magnifiercz (13%10)
 
 -- Configuration for Tabbed
 myTheme :: Theme
@@ -190,8 +189,8 @@ shorten :: Int -> String -> String
 shorten n xs
     | length xs < n = xs
     | otherwise     = (take (n - length end) xs) ++ end
-    where
-        end = "…"
+  where
+    end = "…"
 
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
