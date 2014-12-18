@@ -80,7 +80,7 @@ eval "$(fasd --init auto)"
 
 ### Alias ###
 function rpush {
-	rscp $1 svobodb@rasalas.as.arizona.edu:/home/svobodb/Downloads
+	scp $1 svobodb@rasalas.as.arizona.edu:/home/svobodb/Downloads
 }
 function rpull {
 	scp svobodb@rasalas.as.arizona.edu:/home/svobodb/$1 .
