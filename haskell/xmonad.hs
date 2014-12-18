@@ -125,8 +125,8 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
         nextNonEmptyWS = \_ -> moveTo Next (WSIs (liftM (not .) isVisible))
         prevNonEmptyWS = \_ -> moveTo Prev (WSIs (liftM (not .) isVisible))
 
-myLayout = avoidStrutsOn[U] $ tabs
-    ||| tiled
+myLayout = avoidStrutsOn[U] $ tiled
+    ||| tabs
     ||| Mirror tiled
     ||| magnify Grid
     where
