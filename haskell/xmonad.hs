@@ -32,8 +32,8 @@ myScreenLock  = "/usr/bin/gnome-screensaver-command -l"
 myBorderWidth = 1
 myModMask     = mod4Mask
 myWorkspaces  = ["α", "β" ,"γ", "δ", "ε", "ζ", "η", "θ", "ι"]
-myNormalBorderColor  = "#111"
-myFocusedBorderColor = "cadetblue3"
+myNormalBorderColor  = "grey40"
+myFocusedBorderColor = "yellow3"
 
 myKeys = \conf -> mkKeymap conf $
     -- standard keybindings
@@ -95,10 +95,10 @@ isVisible = do
 myXPConfig :: XPConfig
 myXPConfig = defaultXPConfig
     { font              = "xft:UbuntuMono-10"
-    , bgColor           = "Aquamarine3"
-    , fgColor           = "black"
-    , fgHLight          = "black"
-    , bgHLight          = "darkslategray4"
+    , bgColor           = "grey20"
+    , fgColor           = "white"
+    , fgHLight          = "white"
+    , bgHLight          = "red4"
     , borderColor       = "black"
     , promptBorderWidth = 1
     , position          = Top
@@ -146,24 +146,17 @@ myLayout = avoidStrutsOn[U] $ tiled
 -- Configuration for Tabbed
 myTheme :: Theme
 myTheme = defaultTheme
-    { inactiveBorderColor = "#000"
+    { inactiveBorderColor = "black"
     , activeBorderColor = myFocusedBorderColor
-    , activeColor = "aquamarine3"
-    , inactiveColor = "DarkSlateGray4"
-    , inactiveTextColor = "#222"
-    , activeTextColor = "#222"
-    , fontName = "xft:UbuntuMono-10:bold"
+    , activeColor = "grey40"
+    , inactiveColor = "grey20"
+    , inactiveTextColor = "grey80"
+    , activeTextColor = "white"
+    , fontName = "xft:UbuntuMono-10"
     , decoHeight = 18
-    , urgentColor = "#000"
-    , urgentTextColor = "#63b8ff"
+    , urgentColor = "red4"
+    , urgentTextColor = "white"
     }
-
-myManageHook = composeAll
-    [ resource  =? "desktop_window"    --> doIgnore
-    , className =? "ClockScreenlet.py" --> doIgnore
-    , className =? "Deluge"            --> doF (W.shift "9")
-    , title     =? "roottail"          --> doIgnore ]
-    <+> manageDocks
 
 -- Status bars and logging
 myLogHook h = do
@@ -173,23 +166,23 @@ myLogHook h = do
 
 myPP :: Handle -> PP
 myPP h = defaultPP
-    { ppCurrent = wrap "<fc=black,aquamarine3> " " </fc>"
+    { ppCurrent = wrap "<fc=black,yellow3> " " </fc>"
     , ppSep     = ""
     , ppWsSep = ""
-    , ppVisible = wrap "<fc=black,DarkSlateGray4> " " </fc>"
-    , ppLayout = \x -> "<fc=aquamarine2,black>:: "
+    , ppVisible = wrap "<fc=black,yellow3> " " </fc>"
+    , ppLayout = \x -> ":: "
                  ++ case x of
                       "Mirror ResizableTall"   -> "MTiled"
                       "ResizableTall"          -> "Tiled"
                       "Tabbed Bottom Simplest" -> "Tabbed"
                       "Tabbed Simplest"        -> "Tabbed"
                       _                        -> x
-                 ++ "</fc> "
+                 ++ " "
     , ppTitle = \x -> case length x of
                         0 -> ""
-                        _ -> "<fc=DarkSlateGray3,black>[" ++ shorten 33 x ++ "]</fc>"
-    , ppHiddenNoWindows = wrap "<fc=#aaa,black> " " </fc>"
-    , ppHidden = wrap "<fc=#aaa,black> " " </fc>"
+                        _ -> "<fc=orange3,black>[" ++ shorten 33 x ++ "]</fc>"
+    , ppHiddenNoWindows = wrap "<fc=grey50,black> " " </fc>"
+    , ppHidden = wrap "<fc=white,black> " " </fc>"
     , ppOutput = hPutStrLn h
     }
 
@@ -223,6 +216,5 @@ defaults pipe = defaultConfig
     , mouseBindings      = myMouseBindings
     -- hooks, layouts
     , layoutHook         = myLayout
-    , manageHook         = myManageHook
     , logHook            = myLogHook pipe
     }
