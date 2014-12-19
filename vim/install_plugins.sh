@@ -1,16 +1,30 @@
 #!/usr/bin/env bash
 
 BDIR=$HOME/.vim/bundle
+gitc () {
+	git clone https://github.com/$1/$2.git $BDIR/$2
+}
+
+# pathogen
 wget https://tpo.pe/pathogen.vim -O $HOME/.vim/autoload/pathogen.vim
-git clone https://github.com/jiangmiao/auto-pairs $BDIR/auto-pairs
-git clone https://github.com/vim-scripts/tComment $BDIR/tComment
-git clone https://github.com/kien/ctrlp.vim $BDIR/ctrlp.vim
-git clone https://github.com/davidhalter/jedi-vim $BDIR/jedi-vim
-git clone https://github.com/scrooloose/syntastic $BDIR/syntastic
-git clone https://github.com/bling/vim-airline $BDIR/vim-airline
-git clone https://github.com/tpope/vim-fugitive $BDIR/vim-fugitive
-git clone https://github.com/jpalardy/vim-slime $BDIR/vim-slime
-git clone https://github.com/tpope/vim-surround $BDIR/vim-surround
-git clone https://github.com/JuliaLang/julia-vim $BDIR/julia-vim
-git clone https://github.com/klen/python-mode.git $BDIR/python-mode
-git clone https://github.com/junegunn/vim-easy-align.git $BDIR/vim-easy-align
+# theme
+gitc bling vim-airline
+# syntax
+gitc scrooloose syntastic
+# format
+gitc jiangmiao auto-pairs
+gitc junegunn vim-easy-align
+gitc vim-scripts tComment
+# utility
+gitc kien ctrlp.vim
+gitc jpalardy vim-slime
+gitc tpope vim-surround
+# git
+gitc tpope vim-fugitive
+# python
+gitc davidhalter jedi-vim
+gitc klen python-mode
+# julia
+gitc JuliaLang julia-vim
+# haskell
+gitc bitc vim-hdevtools

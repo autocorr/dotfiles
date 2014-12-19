@@ -158,7 +158,7 @@ let g:airline#extensions#tabline#right_sep = ''
 " Set tab-complete menu to something readable
 highlight Pmenu ctermbg=238 gui=bold
 " Jedi
-let g:jedi#auto_initialization = 0
+let g:jedi#auto_initialization = 1
 let g:jedi#auto_vim_configuration = 1
 let g:jedi#popup_on_dot = 0
 " Syntastic
@@ -174,3 +174,8 @@ let g:ctrlp_cmd = 'CtrlP'
 " Easy Align
 vmap <Enter> <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+" Hdevtools
+au FileType haskell nnoremap <buffer> <F2> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsClear<CR>
+au FileType haskell nnoremap <buffer> <silent> <F4> :HdevtoolsInfo<CR>
+au FileType haskell set formatprg=pointfree
