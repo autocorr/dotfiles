@@ -16,6 +16,7 @@ let mapleader=","
 
 "" tabs
 "set tabnumbers
+nnoremap zt :tabopen about:treestyletab-group<CR>
 
 "" gui
 set gui=nonavigation

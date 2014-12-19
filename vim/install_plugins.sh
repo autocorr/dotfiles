@@ -28,3 +28,9 @@ gitc klen python-mode
 gitc JuliaLang julia-vim
 # haskell
 gitc bitc vim-hdevtools
+gitc eagletmt ghcmod-vim
+gitc dag vim2hs
+gitc Shougo vimproc.vim  # required for vim2hs
+cd $BDIR/vimproc.vim
+make
+cd -
