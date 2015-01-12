@@ -5,32 +5,35 @@ gitc () {
 	git clone https://github.com/$1/$2.git $BDIR/$2
 }
 
-# pathogen
+# :: pathogen
 wget https://tpo.pe/pathogen.vim -O $HOME/.vim/autoload/pathogen.vim
-# theme
+# -- theme
 gitc bling vim-airline
-# syntax
+# -- syntax
 gitc scrooloose syntastic
-# format
+# -- format
 gitc jiangmiao auto-pairs
 gitc junegunn vim-easy-align
 gitc vim-scripts tComment
-# utility
+# -- utility
 gitc kien ctrlp.vim
 gitc jpalardy vim-slime
 gitc tpope vim-surround
-# git
+# -- git
 gitc tpope vim-fugitive
-# python
+# -- python
 gitc davidhalter jedi-vim
 gitc klen python-mode
-# julia
+# -- julia
 gitc JuliaLang julia-vim
-# haskell
+# -- haskell
 gitc bitc vim-hdevtools
 gitc eagletmt ghcmod-vim
 gitc dag vim2hs
 gitc Shougo vimproc.vim  # required for vim2hs
+# -- io
+gitc andreimaxim vim-io
+# :: build
 cd $BDIR/vimproc.vim
 make
 cd -
