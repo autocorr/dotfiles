@@ -23,6 +23,9 @@ except ImportError:
     sys.path.extend(paths)
     warnings.warn('PYTHONPATH set incorrectly')
     import besl
+else:
+    from besl import catalog
+    from besl import image
 
 
 ## Try switching backend to GTK
@@ -38,13 +41,13 @@ except RuntimeError:
 ## Import aliases
 # Numerical
 import numpy as np
-import numexpr as ne
 import pandas as pd
 # Astropy
 from astropy.io import fits
 from astropy import wcs
 from astropy import coordinates as coord
 from astropy import units as u
+from astropy import constants as c
 # System
 from imp import reload
 
