@@ -3,12 +3,12 @@ nnoremap j 5j
 nnoremap k 5k
 nnoremap l 5l
 nnoremap h 5h
-nnoremap zH 10h
-nnoremap zL 10l
-nnoremap zb :sidebar Bookmarks<CR>
-nnoremap zh :sidebar History<CR>
-nnoremap zx :sbclose<CR>
-nnoremap zp <C-S-E>  " tabgroups
+nnoremap ,H 10h
+nnoremap ,L 10l
+nnoremap ,b :sidebar Bookmarks<CR>
+nnoremap ,h :sidebar History<CR>
+nnoremap ,x :sbclose<CR>
+nnoremap ,p <C-S-E>  " tabgroups
 
 "" completion
 set cpt=l
@@ -16,11 +16,11 @@ let mapleader=","
 
 "" tabs
 "set tabnumbers
-nnoremap zt :tabopen about:treestyletab-group<CR>
+nnoremap ,t :tabopen about:treestyletab-group<CR>
 
 "" gui
 set gui=nonavigation
-set scrollbars=false
+"set scrollbars=false
 
 "" general qmarks
 silent qmark c http://calendar.google.com
