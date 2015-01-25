@@ -33,23 +33,6 @@ System
   * Add shortcuts for mute/volume-up/volume-down
 
 
-Python
-------
-* Install packages
-
-  * ``z dotfiles/packages``
-  * ``./install_py.sh``
-
-
-Julia
------
-* Install Julia
-
-  * ``z code``
-  * ``git clone https://github.com/julialang/julia``
-  * ``git pull; make clean; make -j 4``
-
-
 Shell
 -----
 * Install fasd
@@ -74,6 +57,12 @@ Vim
 
 Themes
 ------
+* gtk: ambiance-grey
+* icons: faenza-radiance
+* cursor: dmz-white
+* font: inconsolata
+* gnome-terminal: color scheme -> Tango
+
 * Install themes
 
   * ``mkdir ~/.themes ~/.icons ~/.fonts``
@@ -82,9 +71,18 @@ Themes
 
 * Desktop background
 * unity-tweak-tool / gnome-tweak-tool
-* gnome-terminal
 
-  * Color scheme -> Tango
+
+Firefox Setup
+-------------
+* plugins
+
+  * vimperator
+  * https-everywhere
+  * microblock / micromatrix
+  * tree-style-tabs
+  * downthemall!
+  * restartless restart
 
 
 Mac Specific
@@ -94,7 +92,7 @@ Mac Specific
   * ``sudo apt-get install macfanctld``
 
 * Function keys
- 
+
   * ``echo options hid_apple fnmode=2 | sudo tee -a /etc/modprobe.d/hid_apple.conf``
   * ``sudo update-initramfs -u -k all``
 
