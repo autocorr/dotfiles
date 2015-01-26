@@ -1,10 +1,16 @@
-"" key mappings
+"" navigation
 nnoremap j 5j
 nnoremap k 5k
 nnoremap l 5l
 nnoremap h 5h
 nnoremap ,H 10h
 nnoremap ,L 10l
+nnoremap J :tabprevious<CR>
+nnoremap K :tabnext<CR>
+nnoremap x :tabclose<CR>
+
+
+"" sidebar
 nnoremap ,b :sidebar Bookmarks<CR>
 nnoremap ,h :sidebar History<CR>
 nnoremap ,x :sbclose<CR>
