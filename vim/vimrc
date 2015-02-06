@@ -127,6 +127,8 @@ noremap <leader>ss :call StripWhitespace()<CR>
 " Highlight current line and remove highlighting
 nnoremap <silent> <leader>m ml:execute 'match Search /\%'.line('.').'l/'<CR>
 nnoremap <silent> <leader>M :call clearmatches()<CR>
+" Insert current date or time
+nnoremap <leader>d :r !date<CR>
 
 
 "" Colors
