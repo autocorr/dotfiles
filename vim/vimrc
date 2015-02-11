@@ -160,8 +160,8 @@ let g:airline#extensions#tabline#right_sep = ''
 " Set tab-complete menu to something readable
 highlight Pmenu ctermbg=238 gui=bold
 " Jedi
-let g:jedi#auto_initialization = 1
-let g:jedi#auto_vim_configuration = 1
+let g:jedi#auto_initialization = 0
+let g:jedi#auto_vim_configuration = 0
 let g:jedi#popup_on_dot = 0
 " Syntastic
 let g:syntastic_mode_map = {'mode': 'passive'}
