@@ -106,3 +106,8 @@ Ubuntu Specific
   * Utility -> Workarounds -> "Force full screen redraws (buffer swap) on repaint"
 
 
+Wine
+----
+* Install 64-bit XP version of Adobe acroread
+* Run winetricks commands
+* Install with standard installer
