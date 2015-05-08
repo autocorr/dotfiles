@@ -53,6 +53,9 @@ set incsearch
 if has('mouse')
 	set mouse=a
 endif
+" More natural split opening
+set splitbelow
+set splitright
 
 
 "" Scrolling
@@ -184,3 +187,10 @@ au FileType haskell nnoremap <buffer> <silent> <F4> :HdevtoolsInfo<CR>
 au FileType haskell set formatprg=pointfree
 let g:haskell_conceal_wide = 0
 let g:haskell_conceal = 0
+" vim-tmux-navigator
+let g:tmux_navigator_no_mappings = 1
+nnoremap <C-h> :TmuxNavigateLeft<CR>
+nnoremap <C-j> :TmuxNavigateDown<CR>
+nnoremap <C-k> :TmuxNavigateUp<CR>
+nnoremap <C-l> :TmuxNavigateRight<CR>
+nnoremap <C-\> :TmuxNavigatePrevious<CR>

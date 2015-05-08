@@ -9,6 +9,8 @@ gitc () {
 wget https://tpo.pe/pathogen.vim -O $HOME/.vim/autoload/pathogen.vim
 # -- theme
 gitc bling vim-airline
+# -- tmux
+gitc christoomey vim-tmux-navigator
 # -- syntax
 gitc scrooloose syntastic
 # -- format
