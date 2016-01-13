@@ -105,7 +105,9 @@ if !exists(":DiffOrig")
 endif
 
 
-"" Julia language specific
+"" Language specific
+autocmd Filetype c setlocal ts=4 sts=4 sw=4
+autocmd Filetype cpp setlocal ts=4 sts=4 sw=4
 autocmd Filetype julia setlocal ts=4 sts=4 sw=4 expandtab
 
 
