@@ -17,6 +17,7 @@ gitc scrooloose syntastic
 gitc jiangmiao auto-pairs
 gitc junegunn vim-easy-align
 gitc vim-scripts tComment
+gitc vimwiki vimwiki
 # -- utility
 gitc kien ctrlp.vim
 gitc jpalardy vim-slime
