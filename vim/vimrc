@@ -200,3 +200,5 @@ nnoremap <C-j> :TmuxNavigateDown<CR>
 nnoremap <C-k> :TmuxNavigateUp<CR>
 nnoremap <C-l> :TmuxNavigateRight<CR>
 nnoremap <C-\> :TmuxNavigatePrevious<CR>
+" vim-wiki
+let g:vimwiki_list = [{'path': '~/research/Documents/vimwiki/', 'path_html': '~/code/vimwiki_html/'}]
