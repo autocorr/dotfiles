@@ -19,7 +19,7 @@ gitc junegunn vim-easy-align
 gitc vim-scripts tComment
 gitc vimwiki vimwiki
 # -- utility
-gitc kien ctrlp.vim
+gitc ctrlpvim ctrlp.vim
 gitc jpalardy vim-slime
 gitc tpope vim-surround
 # -- git
