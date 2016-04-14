@@ -1,0 +1,73 @@
+# Mail configuration
+set realname = "Brian Svoboda"
+set from = "{EMAIL}"
+
+set imap_user = "{EMAIL}"
+set imap_pass = "{PASSWD}"
+set folder = "imaps://imap.gmail.com"
+set spoolfile = "imaps://imap.gmail.com/INBOX"
+set postponed = "imaps://imap.gmail.com/[Gmail]/Drafts"
+set imap_keepalive = 900
+
+set smtp_url = "smtp://{EMAIL}@smtp.gmail.com:587/"
+set smtp_pass = "{PASSWD}"
+
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+
+set move = no
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+
+# Index view options
+set tilde
+set pager_context = 5
+set date_format = "%m/%d"
+set index_format = "[%Z]  %D %-20.20F %s"
+set sort = threads
+set sort_aux = reverse-last-date-received
+set uncollapse_jump
+set sort_re
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set status_chars = " *%A"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?($"
+
+
+# Mail view options
+ignore *
+unignore From: Date: To: Cc: Reply-To: Subject:
+unhdr_order *
+hdr_order From: Date: To: Cc: Reply-To: Subject:
+
+
+# Editor options
+set editor = "vim -c 'set tw=70 et' '+/^$' "
+set edit_headers
+
+
+# Contacts, `abook`
+macro index,pager a "<pipe-message>abook --add-email-quiet<return>" "Add this sender to abook"
+bind editor <tab> complete-query
+
+
+# Misc
+set charset = "utf-8"
+set markers
+set smart_wrap
+set pager_context = 5
+set status_on_top
+push <show-version>
+
+
+# Bindings and macros
+set sort_alias = alias
+bind editor <space> noop  # required for IMAP folders with spaces in the name
+bind index <tab> imap-fetch-mail
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
+macro index gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred messages"
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+
+
