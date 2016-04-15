@@ -25,7 +25,7 @@ set ssl_force_tls = yes
 set tilde
 set pager_context = 5
 set date_format = "%m/%d"
-set index_format = "[%Z]  %D %-20.20F %s"
+set index_format = " %2C [%Z]  %D %-20.20F %s"
 set sort = threads
 set sort_aux = reverse-last-date-received
 set uncollapse_jump
@@ -33,6 +33,7 @@ set sort_re
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 set status_chars = " *%A"
 set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?($"
+source ~/.mutt/colors
 
 
 # Mail view options
@@ -40,6 +41,7 @@ ignore *
 unignore From: Date: To: Cc: Reply-To: Subject:
 unhdr_order *
 hdr_order From: Date: To: Cc: Reply-To: Subject:
+set metoo = no
 
 
 # Editor options
@@ -59,6 +61,8 @@ set smart_wrap
 set pager_context = 5
 set status_on_top
 push <show-version>
+auto_view text/html
+alternative_order text/plain text/enriched text/html
 
 
 # Bindings and macros
