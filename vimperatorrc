@@ -8,6 +8,7 @@ nnoremap ,L 10l
 nnoremap J :tabprevious<CR>
 nnoremap K :tabnext<CR>
 nnoremap x :tabclose<CR>
+nnoremap X :undo<CR>
 
 
 "" sidebar
@@ -25,7 +26,7 @@ let mapleader=","
 nnoremap ,t :tabopen about:treestyletab-group<CR>
 
 "" gui
-set gui=nonavigation
+"set gui=nonavigation
 "set scrollbars=false
 
 "" general qmarks
