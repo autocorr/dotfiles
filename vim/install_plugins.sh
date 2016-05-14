@@ -36,6 +36,8 @@ gitc dag vim2hs
 gitc Shougo vimproc.vim  # required for vim2hs
 # -- io
 gitc andreimaxim vim-io
+# -- rust
+gitc rust-lang rust.vim
 # :: build
 cd $BDIR/vimproc.vim
 make

@@ -49,8 +49,9 @@ set editor = "vim -c 'set tw=70 et' '+/^$' "
 set edit_headers
 
 
-# Contacts, `abook`
-macro index,pager a "<pipe-message>abook --add-email-quiet<return>" "Add this sender to abook"
+# Contacts
+set query_command = "goobook query '%s'"
+macro index,pager a "<pipe-message>goobook add<return>" "Add this sender to contacts"
 bind editor <tab> complete-query
 
 
