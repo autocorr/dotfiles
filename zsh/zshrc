@@ -76,8 +76,7 @@ export GOPATH=$HOME/code/gocode
 export MPLCONFIGDIR=~/.config/matplotlib
 export CFITSIO=/usr/include:/usr/lib/x86_64-linux-gnu/:/usr/lib:/usr/local/lib
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/include:~/code/qhull/lib:~/code/ARTIST/lib
-export IDL_PATH="<IDL_PATH>"
-export IDL_PATH=${IDL_PATH}:/usr/local/exelis/idl82/bin:/usr/local/exelis/idl82/lib:~/research/scripts/idl:~/research/scripts/idl/astron
+export IDL_PATH=/usr/local/exelis/idl82/bin:/usr/local/exelis/idl82/lib:~/research/scripts/idl:~/research/scripts/astron:~/research/scripts/starfinder:~/research/scripts/IDLAstro/pro:~/research/scripts/idl-coyote/:~/research/scripts/cmtotal
 export RATRAN=/media/svobodb/scratch/infall_model/Ratran
 export RATRANRUN=/media/svobodb/scratch/infall_model/Ratran/run
 export ARTIST_ROOT=/home/svobodb/code/ARTIST
@@ -105,10 +104,10 @@ alias eldfs_home='sshfs svobodb@eldora.as.arizona.edu:/home/svobodb/ /mnt/eld_ho
 alias eldfs_home_off='fusermount -u /mnt/eld_home'
 alias rasfs='sshfs svobodb@rasalas.as.arizona.edu:/home/svobodb/ /mnt/ras_data/ -C -o reconnect,auto_cache,workaround=all'
 alias rasfs_off='fusermount -u /mnt/ras_data'
-alias eldora="ssh -XC4 svobodb@eldora.as.arizona.edu"
-alias greenbank="ssh -XC4 bsvoboda@ssh.gb.nrao.edu"
-alias hht="ssh -XC4 obs@smtoast.as.arizona.edu"
-alias rasalas="ssh -XC4 svobodb@rasalas.as.arizona.edu"
+alias eldora="ssh -X svobodb@eldora.as.arizona.edu"
+alias greenbank="ssh -X bsvoboda@ssh.gb.nrao.edu"
+alias hht="ssh -X obs@smtoast.as.arizona.edu"
+alias rasalas="ssh -X svobodb@rasalas.as.arizona.edu"
 # fasd
 alias v='f -e vim'
 alias m='f -e mplayer'
