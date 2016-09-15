@@ -1,0 +1,16 @@
+https://news.ycombinator.com/rss tech "~Hacker News"
+https://reddit.com/r/programming/.rss tech "~r/programming"
+https://reddit.com/r/python/.rss tech "~r/python"
+https://reddit.com/r/rust/.rss tech "~r/rust"
+
+http://lxer.com/module/newswire/headlines.rss linux "~LXer"
+https://reddit.com/r/linux/.rss linux "~r/linux"
+
+http://export.arxiv.org/rss/astro-ph.GA arxiv "~astro-ph.GA"
+http://export.arxiv.org/rss/astro-ph.SR arxiv "~astro-ph.SR"
+
+http://feeds.feedburner.com/physicstoday/pt1 science "~Physics Today"
+http://phys.org/rss-feed/space-news science "~phys.org: Space News"
+http://phys.org/rss-feed/physics-news science "~phys.org: Physics News"
+http://nautil.us/rss/all science "~Nautilus"
+http://www.archaeology.org/feed science "~Archaeology.org"
