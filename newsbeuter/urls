@@ -10,6 +10,7 @@ http://export.arxiv.org/rss/astro-ph.GA arxiv "~astro-ph.GA"
 http://export.arxiv.org/rss/astro-ph.SR arxiv "~astro-ph.SR"
 
 http://feeds.feedburner.com/physicstoday/pt1 science "~Physics Today"
+http://www.universetoday.com/feed science "~Universe Today"
 http://phys.org/rss-feed/space-news science "~phys.org: Space News"
 http://phys.org/rss-feed/physics-news science "~phys.org: Physics News"
 http://nautil.us/rss/all science "~Nautilus"
