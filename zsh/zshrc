@@ -7,23 +7,14 @@ export ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="quetzal"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
 # Uncomment the following line to disable auto-setting terminal title.
 DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to disable command auto-correction.
-# DISABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -32,14 +23,6 @@ COMPLETION_WAITING_DOTS="true"
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -53,8 +36,8 @@ source $ZSH/oh-my-zsh.sh
 #                        User ZSH Configuration
 #############################################################################
 
-# You may need to manually set your language environment
 export LANG=en_US.UTF-8
+export TERM=xterm-256color
 
 setopt histignorealldups sharehistory
 setopt noflowcontrol
@@ -86,28 +69,19 @@ export PATH=$PATH:/opt/bin:~/code/bin:~/code/mygbtidl/gbtidl:~/code/montage/bin:
 eval "$(fasd --init auto)"
 
 ### Alias ###
+REM_HOST=host
+REM_USER=user
 function rpush {
-	rscp $1 svobodb@rasalas.as.arizona.edu:/home/svobodb/Downloads
+	scp $1 $REM_USER@$REM_HOST.as.arizona.edu:/home/$REM_USER/Downloads
 }
 function rpull {
-	scp svobodb@rasalas.as.arizona.edu:/home/svobodb/$1 .
+	scp $REM_USER@$REM_HOST.as.arizona.edu:/home/$REM_USER/$1 .
 }
 function rwget {
-	ssh -t svobodb@rasalas.as.arizona.edu "wget -P /home/svobodb/Downloads/ '$1'"
+	ssh -t $REM_USER@$REM_HOST.as.arizona.edu "wget -P /home/'$REM_USER'/Downloads/ '$1'"
 }
 # radio
 alias groove="mplayer http://ice.somafm.com/groovesalad"
-# ssh
-alias eldfs='sshfs svobodb@eldora.as.arizona.edu:/data0/svobodb/ /mnt/eld_data/ -C -o reconnect,auto_cache,workaround=all'
-alias eldfs_off='fusermount -u /mnt/eld_data'
-alias eldfs_home='sshfs svobodb@eldora.as.arizona.edu:/home/svobodb/ /mnt/eld_home/'
-alias eldfs_home_off='fusermount -u /mnt/eld_home'
-alias rasfs='sshfs svobodb@rasalas.as.arizona.edu:/home/svobodb/ /mnt/ras_data/ -C -o reconnect,auto_cache,workaround=all'
-alias rasfs_off='fusermount -u /mnt/ras_data'
-alias eldora="ssh -X svobodb@eldora.as.arizona.edu"
-alias greenbank="ssh -X bsvoboda@ssh.gb.nrao.edu"
-alias hht="ssh -X obs@smtoast.as.arizona.edu"
-alias rasalas="ssh -X svobodb@rasalas.as.arizona.edu"
 # fasd
 alias v='f -e vim'
 alias m='f -e mplayer'
