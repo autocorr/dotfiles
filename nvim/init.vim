@@ -5,9 +5,9 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'jpalardy/vim-slime'
 Plug 'julialang/julia-vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'nanotech/jellybeans.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
@@ -22,7 +22,6 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible
 set t_Co=256
 set lw=79
 set list listchars=tab:»\ ,trail:·
@@ -75,27 +74,24 @@ nnoremap <leader>d :r !date<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:jellybeans_background_color_256 = 256
-let g:jellybeans_use_lowcolor_black = 0
+" Set tab-complete menu to something readable
+highlight Pmenu ctermbg=238 gui=bold
+
+let g:jellybeans_overrides = {
+\	'background': {'ctermbg': 'black', '256ctermbg': 'black'},
+\	'Todo': {'ctermfg': 'red', 'ctermbg': 'black',
+\		'256ctermfg': 'red', '256ctermbg': 'black',
+\		'attr': 'bold'},
+\}
 colors jellybeans
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Packages
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-slime
-let g:slime_target = "tmux"
-let g:slime_paste_file = "$HOME/.slime_paste"
-let g:slime_python_ipython = 1
-let g:slime_no_mappings = 1
-xmap <leader>c <Plug>SlimeRegionSend
-nmap <leader>c <Plug>SlimeParagraphSend
-nmap <leader>cc <Plug>SlimeLineSend
-
 " CtrlP
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
-" Set tab-complete menu to something readable
-highlight Pmenu ctermbg=238 gui=bold
 
 " Easy Align
 vmap <Enter> <Plug>(EasyAlign)
@@ -112,6 +108,7 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
+let g:airline_theme='jellybeans'
 
 " vim-tmux-navigator
 let g:tmux_navigator_no_mappings = 1

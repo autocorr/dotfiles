@@ -69,8 +69,8 @@ export PATH=$PATH:/opt/bin:~/code/bin:~/code/mygbtidl/gbtidl:~/code/montage/bin:
 eval "$(fasd --init auto)"
 
 ### Alias ###
-REM_HOST=host
-REM_USER=user
+REM_HOST=rasalas
+REM_USER=svobodb
 function rpush {
 	scp $1 $REM_USER@$REM_HOST.as.arizona.edu:/home/$REM_USER/Downloads
 }
@@ -80,6 +80,8 @@ function rpull {
 function rwget {
 	ssh -t $REM_USER@$REM_HOST.as.arizona.edu "wget -P /home/'$REM_USER'/Downloads/ '$1'"
 }
+# neovim
+alias nv=nvim
 # radio
 alias groove="mplayer http://ice.somafm.com/groovesalad"
 # fasd
