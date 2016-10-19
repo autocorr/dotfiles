@@ -68,8 +68,8 @@ export PATH=$PATH:/opt/bin:~/code/bin:~/code/mygbtidl/gbtidl:~/code/montage/bin:
 eval "$(fasd --init auto)"
 
 ### Alias ###
-REM_HOST=rasalas
-REM_USER=svobodb
+REM_HOST=host
+REM_USER=user
 function rpush {
 	scp $1 $REM_USER@$REM_HOST.as.arizona.edu:/home/$REM_USER/Downloads
 }
