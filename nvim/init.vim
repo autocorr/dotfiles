@@ -74,14 +74,12 @@ nnoremap <leader>d :r !date<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set tab-complete menu to something readable
-highlight Pmenu ctermbg=238 gui=bold
-
 let g:jellybeans_overrides = {
 \	'background': {'ctermbg': 'black', '256ctermbg': 'black'},
 \	'Todo': {'ctermfg': 'red', 'ctermbg': 'black',
 \		'256ctermfg': 'red', '256ctermbg': 'black',
 \		'attr': 'bold'},
+\	'SpecialKey': {'ctermbg': 'black', '256ctermbg': 'black'},
 \}
 colors jellybeans
 
