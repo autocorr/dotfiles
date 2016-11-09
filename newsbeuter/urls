@@ -9,7 +9,7 @@ http://lxer.com/module/newswire/headlines.rss linux "~LXer"
 https://lwn.net/headlines/rss linux "~LWN"
 https://reddit.com/r/linux/.rss linux "~r/linux"
 https://feeds.feedburner.com/linuxtoday/linux linux "~Linux Today"
-https://feeds.feedburner.com/linuxjournalcom linux "Linux Journal"
+https://feeds.feedburner.com/linuxjournalcom linux "~Linux Journal"
 
 http://export.arxiv.org/rss/astro-ph.GA arXiv "~astro-ph.GA"
 http://export.arxiv.org/rss/astro-ph.SR arXiv "~astro-ph.SR"
