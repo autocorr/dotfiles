@@ -120,6 +120,6 @@ nnoremap <C-\> :TmuxNavigatePrevious<CR>
 let g:vimwiki_list = [{'path': '~/code/notes/', 'path_html': '~/code/vimwiki_html/'}]
 autocmd Filetype vimwiki setlocal ts=4 sw=4 expandtab
 :autocmd Filetype vimwiki map <leader>d :VimwikiMakeDiaryNote<CR>
-:autocmd Filetype vimwiki map <leader>s :VimwikiSearch /
+:autocmd Filetype vimwiki map <leader>sw :VimwikiSearch<space>
 :autocmd Filetype vimwiki map <leader>dg :VimwikiDiaryGenerateLinks<CR>
 :autocmd Filetype vimwiki map <leader>di :VimwikiDiaryIndex<CR>
