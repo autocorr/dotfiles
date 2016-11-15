@@ -1,5 +1,8 @@
-browser "/usr/bin/firefox"
-external-url-viewer "/usr/bin/urlview"
+browser "firefox"
+external-url-viewer "urlview"
+
+# settings -------------------------------------------------------------------
+keep-articles-days 10
 
 # key bindings ---------------------------------------------------------------
 bind-key j next
@@ -12,3 +15,9 @@ bind-key J next article
 bind-key K prev article
 
 # macros ---------------------------------------------------------------------
+# keys are prefixed by ","
+macro o set browser "w3m" ; open-in-browser-and-mark-read ; set browser "firefox"
+macro 1 set browser "w3m" ; goto-url 1 ; set browser "firefox"
+macro 2 set browser "w3m" ; goto-url 2 ; set browser "firefox"
+macro 3 set browser "w3m" ; goto-url 3 ; set browser "firefox"
+macro i set browser "feh" ; open ; set browser "firefox"
