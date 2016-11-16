@@ -3,6 +3,7 @@ https://reddit.com/r/programming/.rss tech "~r/programming"
 https://reddit.com/r/python/.rss tech "~r/python"
 https://reddit.com/r/rust/.rss tech "~r/rust"
 http://www.eetimes.com/rss_simple.asp tech "~EE Times"
+http://www.embedded.com/rss/ tech "~Embedded"
 http://makezine.com/feed/ tech "~Makezine"
 
 http://lxer.com/module/newswire/headlines.rss linux "~LXer"
