@@ -5,6 +5,7 @@ https://reddit.com/r/rust/.rss tech "~r/rust"
 http://www.eetimes.com/rss_simple.asp tech "~EE Times"
 http://www.embedded.com/rss/ tech "~Embedded"
 http://makezine.com/feed/ tech "~Makezine"
+https://hackaday.com/feed/ tech "~Hackaday"
 
 http://lxer.com/module/newswire/headlines.rss linux "~LXer"
 https://lwn.net/headlines/rss linux "~LWN"
