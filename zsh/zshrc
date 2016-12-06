@@ -80,7 +80,7 @@ function rwget {
 	ssh -t $REM_USER@$REM_HOST.as.arizona.edu "wget -P /home/'$REM_USER'/Downloads/ '$1'"
 }
 # neovim
-alias nv=nvim
+alias nv='nvim'
 # radio
 alias groove="mplayer http://ice.somafm.com/groovesalad"
 # fasd
@@ -114,7 +114,7 @@ alias grep='grep -n --color'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias tmux='tmux -2'
-alias vw='nvim -c VimwikiIndex'
+alias vw='vim -c VimwikiIndex'
 alias slurm='slurm -i eth0'
 alias trash='gvfs-trash'
 alias hangups='hangups --col-scheme solarized-dark'
