@@ -8,7 +8,6 @@ if [ ! -d "$VIMDIR/autoload" ]; then
 	mkdir -p $VIMDIR/swaps
 	mkdir -p $VIMDIR/colors
 	cp ./vimrc ~/.vimrc
-	cp ./jellybeans.vim $VIMDIR/colors
 	cp ./install_plugins.sh $VIMDIR/bundle
 	cp ./update_plugins.sh $VIMDIR/bundle
 	./install_plugins.sh

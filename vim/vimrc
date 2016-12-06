@@ -1,111 +1,28 @@
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-" 256 Color terminal
-set t_Co=256
-syntax on
-set hlsearch
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-	finish
-endif
-" Pathogen
-filetype off
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call pathogen#infect()
 call pathogen#helptags()
-filetype plugin indent on
-" Allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-" Set line-break at 79 char
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NOTE: vim-sensible cleans up most general settings
+set t_Co=256
 set lw=79
-" Change mapleader
-let mapleader=","
-" Show whitespace
 set list listchars=tab:»\ ,trail:·
-" Centralize backups, swapfiles, and undo history
 set backupdir=~/.vim/backups//
 set directory=~/.vim/swaps//
-if exists("&undodir")
-	set undodir=~/.vim/undo
-end
-if has("vms")
-	" Do not keep a backup file, use versions instead
-	set nobackup
-else
-	" Keep a backup file
-	set backup
-endif
-" Keep 50 lines of command line history
-set history=50
-" Show the cursor position row/column
-set ruler
-" Highlight current line
 set cursorline
-" Show line numbers
 set number
-" Show the filename in the window titlebar
 set title
-" Display incomplete commands
 set showcmd
-" Do incremental searching
-set incsearch
-" Turn mouse on in all modes
-if has('mouse')
-	set mouse=a
-endif
-" More natural split opening
-set splitbelow
-set splitright
 
 
-"" Scrolling
-" Start scrolling three lines before the horizontal window border
-set scrolloff=3
-set sidescrolloff=15
-set sidescroll=1
-
-
-"" Wildmode completion
-set wildmode=list:longest
-set wildmenu
-set wildignore=*.o,*.obj,*.pyc
-set wildignore+=*vim/backups*
-set wildignore+=*.png,*.jpg,*.gif
-
-
-"" Automatic commands
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-	" Put these in an autocmd group, so that we can delete them easily.
-	augroup vimrcEx
-	au!
-	" For all text files set 'textwidth' to 78 characters.
-	autocmd FileType text setlocal textwidth=78
-	" When editing a file, always jump to the last known cursor position.
-	" Don't do it when the position is invalid or when inside an event handler
-	" (happens when dropping a file on gvim).
-	" Also don't do it when the mark is in the first line, that is the default
-	" position when opening a file.
-	autocmd BufReadPost *
-		\ if line("'\"") > 1 && line("'\"") <= line("$") |
-		\   exe "normal! g`\"" |
-		\ endif
-	augroup END
-else
-	" Always set autoindenting on
-	set autoindent
-endif " has("autocmd")
-
-" Convenient command to see the difference between the current buffer
-" and the file it was loaded from, thus the changes you made.  Only
-" define it when not defined already.
-if !exists(":DiffOrig")
-	command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		\ | wincmd p | diffthis
-endif
-
-
-"" Language specific
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Language settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd Filetype c setlocal ts=4 sts=4 sw=4
 autocmd Filetype cpp setlocal ts=4 sts=4 sw=4
 autocmd Filetype julia setlocal ts=4 sts=4 sw=4 expandtab
@@ -115,15 +32,14 @@ let fortran_more_precise=1
 let fortran_do_enddo=1
 
 
-"" Keybindings
-inoremap <C-f> <C-o>l
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Custom keybindings & commands
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader=","
+
 " Don't use Ex mode, use Q for formatting
 map Q gq
-" Save a file as root (,W)
-noremap <leader>W :w !sudo tee % > /dev/null<CR>
+
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
 	let save_cursor = getpos(".")
@@ -133,31 +49,45 @@ function! StripWhitespace()
 	call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
+
 " Highlight current line and remove highlighting
 nnoremap <silent> <leader>m ml:execute 'match Search /\%'.line('.').'l/'<CR>
 nnoremap <silent> <leader>M :call clearmatches()<CR>
+
 " Insert current date or time
 nnoremap <leader>d :r !date<CR>
 
 
-"" Colors
-let g:jellybeans_background_color_256 = 256
-let g:jellybeans_use_lowcolor_black = 0
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colors
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:jellybeans_overrides = {
+\	'background': {'ctermbg': 'black', '256ctermbg': 'black'},
+\	'Todo': {'ctermfg': 'red', 'ctermbg': 'black',
+\		'256ctermfg': 'red', '256ctermbg': 'black',
+\		'attr': 'bold'},
+\	'SpecialKey': {'ctermbg': 'black', '256ctermbg': 'black'},
+\}
 colors jellybeans
 
 
-"" Package settings
-" pymode
-let g:pymode_lint = 0
-let g:pymode_rope = 0
-" vim-slime
-let g:slime_target = "tmux"
-let g:slime_paste_file = "$HOME/.slime_paste"
-let g:slime_python_ipython = 1
-let g:slime_no_mappings = 1
-xmap <leader>c <Plug>SlimeRegionSend
-nmap <leader>c <Plug>SlimeParagraphSend
-nmap <leader>cc <Plug>SlimeLineSend
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Packages
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Jedi
+let g:jedi#popup_on_dot = 0
+
+" CtrlP
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Easy Align
+vmap <Enter> <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+" UltiSnips
+let g:ultisnips_python_style = 'sphinx'
+
 " vim-airline
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
@@ -166,33 +96,8 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
-" Set tab-complete menu to something readable
-highlight Pmenu ctermbg=238 gui=bold
-" Jedi
-let g:jedi#auto_initialization = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#popup_on_dot = 0
-" Syntastic
-let g:syntastic_mode_map = {'mode': 'passive'}
-let g:syntastic_python_checkers = ['flake8', 'pyflakes', 'pep8', 'mccabe']
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-" UltiSnips
-let g:ultisnips_python_style = 'sphinx'
-" CtrlP
-let g:ctrlp_map = '<leader>t'
-let g:ctrlp_cmd = 'CtrlP'
-" Easy Align
-vmap <Enter> <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-" Hdevtools
-au FileType haskell nnoremap <buffer> <F2> :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsClear<CR>
-au FileType haskell nnoremap <buffer> <silent> <F4> :HdevtoolsInfo<CR>
-" vim2hs
-au FileType haskell set formatprg=pointfree
-let g:haskell_conceal_wide = 0
-let g:haskell_conceal = 0
+let g:airline_theme='jellybeans'
+
 " vim-tmux-navigator
 let g:tmux_navigator_no_mappings = 1
 nnoremap <C-h> :TmuxNavigateLeft<CR>
@@ -200,10 +105,13 @@ nnoremap <C-j> :TmuxNavigateDown<CR>
 nnoremap <C-k> :TmuxNavigateUp<CR>
 nnoremap <C-l> :TmuxNavigateRight<CR>
 nnoremap <C-\> :TmuxNavigatePrevious<CR>
+
 " vim-wiki
 let g:vimwiki_list = [{'path': '~/code/notes/', 'path_html': '~/code/vimwiki_html/'}]
 autocmd Filetype vimwiki setlocal ts=4 sw=4 expandtab
 :autocmd Filetype vimwiki map <leader>d :VimwikiMakeDiaryNote<CR>
-:autocmd Filetype vimwiki map <leader>s :VimwikiSearch /
+:autocmd Filetype vimwiki map <leader>sw :VimwikiSearch<space>
 :autocmd Filetype vimwiki map <leader>dg :VimwikiDiaryGenerateLinks<CR>
 :autocmd Filetype vimwiki map <leader>di :VimwikiDiaryIndex<CR>
+
+
