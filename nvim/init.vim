@@ -9,6 +9,7 @@ Plug 'julialang/julia-vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'nanotech/jellybeans.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -123,3 +124,8 @@ autocmd Filetype vimwiki setlocal ts=4 sw=4 expandtab
 :autocmd Filetype vimwiki map <leader>sw :VimwikiSearch<space>
 :autocmd Filetype vimwiki map <leader>dg :VimwikiDiaryGenerateLinks<CR>
 :autocmd Filetype vimwiki map <leader>di :VimwikiDiaryIndex<CR>
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+
+
