@@ -25,7 +25,3 @@ gitc vim-airline vim-airline
 gitc vim-airline vim-airline-themes
 gitc vimwiki vimwiki
 
-# :: build
-cd $BDIR/vimproc.vim
-make
-cd -
