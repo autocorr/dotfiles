@@ -2,7 +2,6 @@
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call pathogen#infect()
-call pathogen#helptags()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -26,6 +25,7 @@ set showcmd
 autocmd Filetype c setlocal ts=4 sts=4 sw=4
 autocmd Filetype cpp setlocal ts=4 sts=4 sw=4
 autocmd Filetype julia setlocal ts=4 sts=4 sw=4 expandtab
+autocmd Filetype python setlocal ts=4 sts=4 sw=4 expandtab
 autocmd Filetype fortran setlocal ts=2 sts=2 sw=2
 let fortran_free_source=1
 let fortran_more_precise=1
