@@ -78,7 +78,7 @@ colors jellybeans
 let g:jedi#popup_on_dot = 0
 
 " CtrlP
-let g:ctrlp_map = '<leader>t'
+let g:ctrlp_map = '<leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 
 " Easy Align
