@@ -13,6 +13,7 @@ https://reddit.com/r/linux/.rss linux "~r/linux"
 https://feeds.feedburner.com/linuxtoday/linux linux "~Linux Today"
 https://feeds.feedburner.com/linuxjournalcom linux "~Linux Journal"
 
+http://adsabs.harvard.edu/cgi-bin/exec_myads2/all?id=333380711&db_key=DAILY_PRE&rss=2.1 arXiv "~ads arXiv"
 http://export.arxiv.org/rss/astro-ph.GA arXiv "~astro-ph.GA"
 http://export.arxiv.org/rss/astro-ph.SR arXiv "~astro-ph.SR"
 http://export.arxiv.org/rss/astro-ph.CO arXiv "~astro-ph.CO"
