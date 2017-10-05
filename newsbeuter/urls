@@ -12,6 +12,7 @@ https://lwn.net/headlines/rss linux "~LWN"
 https://reddit.com/r/linux/.rss linux "~r/linux"
 https://feeds.feedburner.com/linuxtoday/linux linux "~Linux Today"
 https://feeds.feedburner.com/linuxjournalcom linux "~Linux Journal"
+https://www.gamingonlinux.com/article_rss.php linux "~Gaming on Linux"
 
 http://adsabs.harvard.edu/cgi-bin/exec_myads2/all?id=333380711&db_key=DAILY_PRE&rss=2.1 arXiv "~ads arXiv"
 http://export.arxiv.org/rss/astro-ph.GA arXiv "~astro-ph.GA"
@@ -33,3 +34,5 @@ http://phys.org/rss-feed/space-news science "~phys.org: Space News"
 http://phys.org/rss-feed/physics-news science "~phys.org: Physics News"
 http://news.nationalgeographic.com/rss/index.rss science "~National Geographic"
 http://www.archaeology.org/feed science "~Archaeology.org"
+
+https://www.dhammatalks.org/dhammatalks.rss contemplative "~dhammatalks"
