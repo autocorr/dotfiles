@@ -3,6 +3,8 @@ external-url-viewer "urlview"
 
 # settings -------------------------------------------------------------------
 keep-articles-days 10
+feedlist-format "%4i %n %11u %t"
+articlelist-format "%4i %f %D  %t"
 
 # key bindings ---------------------------------------------------------------
 bind-key j next
