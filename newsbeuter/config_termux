@@ -3,7 +3,7 @@ browser "termux-open-url"
 # settings -------------------------------------------------------------------
 keep-articles-days 10
 feedlist-format "%4i %n %11u %t"
-articlelist-format "%4i %f %D  %t"
+articlelist-format "%4i %t"
 
 # key bindings ---------------------------------------------------------------
 bind-key j next
