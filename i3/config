@@ -138,3 +138,4 @@ bar {
 
 # startup applications
 exec --no-startup-id "xsetroot -solid '#444444'"
+exec --no-startup-id "setxkbmap -option ctrl:nocaps"
