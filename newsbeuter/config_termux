@@ -1,0 +1,24 @@
+browser "termux-open-url"
+
+# settings -------------------------------------------------------------------
+keep-articles-days 10
+feedlist-format "%4i %n %11u %t"
+articlelist-format "%4i %f %D  %t"
+
+# key bindings ---------------------------------------------------------------
+bind-key j next
+bind-key k prev
+bind-key J next-feed
+bind-key K prev-feed
+bind-key j down article
+bind-key k up article
+bind-key J next article
+bind-key K prev article
+
+# macros ---------------------------------------------------------------------
+# keys are prefixed by ","
+macro o set browser "w3m" ; open-in-browser-and-mark-read ; set browser "termux-open-url"
+macro 1 set browser "w3m" ; goto-url 1 ; set browser "termux-open-url"
+macro 2 set browser "w3m" ; goto-url 2 ; set browser "termux-open-url"
+macro 3 set browser "w3m" ; goto-url 3 ; set browser "termux-open-url"
+macro i set browser "feh" ; open ; set browser "termux-open-url"
