@@ -3,16 +3,21 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (magit parinfer evil use-package geiser)))
+ '(package-selected-packages (quote (paredit magit parinfer evil use-package geiser)))
  '(tool-bar-mode nil))
-(custom-set-faces)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  
 
-(setq package-list '(use-package evil geiser magit parinfer))
+(setq package-list '(use-package evil geiser magit paredit parinfer))
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
@@ -27,7 +32,6 @@
   :ensure t
   :config
   (evil-mode 1))
-  
 
 (use-package geiser
   :ensure t)
@@ -35,6 +39,9 @@
 (use-package magit
   :ensure t
   :bind ("M-<f12>" . magit-status))
+
+(use-package paredit
+  :ensure t)
 
 (use-package parinfer
   :ensure t
