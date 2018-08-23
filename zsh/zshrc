@@ -52,35 +52,13 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 # Paths
-export PYTHONPATH=${PYTHONPATH}:~/research/scripts/py:~/research/scripts/besl:~/research/scripts/astroquery:~/research/scripts/photutils:~/research/scripts/radex/Radex/radexgrid:~/research/scripts/astrodendro:~/research/scripts/plfit:~/research/scripts/click:~/code/ARTIST/lib/python2.7/site-packages
-export GOROOT=$HOME/code/go
-export GOPATH=$HOME/code/gocode
 export MPLCONFIGDIR=~/.config/matplotlib
-export CFITSIO=/usr/include:/usr/lib/x86_64-linux-gnu/:/usr/lib:/usr/local/lib
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/include:~/code/qhull/lib:~/code/ARTIST/lib
-export IDL_PATH=/usr/local/exelis/idl82/bin:/usr/local/exelis/idl82/lib:~/research/scripts/idl:~/research/scripts/astron:~/research/scripts/starfinder:~/research/scripts/IDLAstro/pro:~/research/scripts/idl-coyote/:~/research/scripts/cmtotal
-export RATRAN=/media/svobodb/scratch/infall_model/Ratran
-export RATRANRUN=/media/svobodb/scratch/infall_model/Ratran/run
-export ARTIST_ROOT=/home/svobodb/code/ARTIST
-export PATH=$PATH:/opt/bin:~/code/bin:~/code/mygbtidl/gbtidl:~/code/montage/bin:~/.cabal/bin:~/code/casapy/bin:~/code/casapy:$GOROOT/bin:$GOPATH/bin:$RATRAN/bin:$ARTIST_ROOT/bin:~/scratch/lime:~/.cargo/bin
+export PATH=/opt/bin:~/code/bin:~/code/anaconda3/bin:$PATH
 
 # fasd
 eval "$(fasd --init auto)"
 
 ### Alias ###
-REM_HOST=host
-REM_USER=user
-function rpush {
-	scp $1 $REM_USER@$REM_HOST.as.arizona.edu:/home/$REM_USER/Downloads
-}
-function rpull {
-	scp $REM_USER@$REM_HOST.as.arizona.edu:/home/$REM_USER/$1 .
-}
-function rwget {
-	ssh -t $REM_USER@$REM_HOST.as.arizona.edu "wget -P /home/'$REM_USER'/Downloads/ '$1'"
-}
-# neovim
-alias nv='nvim'
 # radio
 alias groove="mplayer http://ice.somafm.com/groovesalad"
 # fasd
@@ -98,10 +76,6 @@ function dls {
 alias ipy='ipython'
 alias ipy3='ipython3 --profile=three'
 alias ipnb='ipython notebook'
-# julia
-alias jl='julia'
-alias ijl='ipython console --profile julia'
-alias ijnb='ipython notebook --profile julia'
 # config
 alias zshrc="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
@@ -114,7 +88,7 @@ alias grep='grep -n --color'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias tmux='tmux -2'
-alias vw='vim -c VimwikiIndex'
+alias vn='vi notes.txt'
 alias slurm='slurm -i eth0'
 alias trash='gvfs-trash'
 alias hangups='hangups --col-scheme solarized-dark'
