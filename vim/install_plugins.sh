@@ -16,8 +16,8 @@ gitc jiangmiao auto-pairs
 gitc JuliaLang julia-vim
 gitc junegunn vim-easy-align
 gitc kalekundert/vim-coiled-snake
-gitc Konfekt/FastFold
-gitc lambdalisue/vim-cython-syntax
+gitc Konfekt FastFold
+gitc lambdalisue vim-cython-syntax
 gitc nanotech jellybeans.vim
 gitc rust-lang rust.vim
 gitc tpope vim-fugitive
