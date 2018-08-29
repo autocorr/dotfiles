@@ -18,5 +18,6 @@ from astropy.io import fits
 
 
 # pandas
-pd.set_option('max_rows', 50)
-pd.set_option('max_columns', 40)
+pd.set_option('display.max_rows', 50)
+pd.set_option('display.max_columns', None)
+pd.set_otpion('display.precision', 4)
