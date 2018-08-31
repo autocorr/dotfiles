@@ -55,8 +55,11 @@ HISTFILE=~/.zsh_history
 export MPLCONFIGDIR=~/.config/matplotlib
 export PATH=/opt/bin:~/code/bin:~/code/anaconda3/bin:$PATH
 
-# fasd
+# fasd -- https://github.com/clvv/fasd
 eval "$(fasd --init auto)"
+
+# fzf -- https://github.com/junegunn/fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ### Alias ###
 # radio
