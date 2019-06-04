@@ -17,6 +17,7 @@ set cursorline
 set number
 set title
 set showcmd
+set nomodeline
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
