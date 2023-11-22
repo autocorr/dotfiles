@@ -1,7 +1,29 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call pathogen#infect()
+" Use `:PlugInstall` and `:PlugUpdate` to install and update plugins.
+" Use `:PlugUpgrade` to upgrade vim-plug itself.
+call plug#begin()
+Plug 'JuliaLang/julia-vim'
+Plug 'Konfekt/FastFold'
+Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-easy-align'
+Plug 'kalekundert/vim-coiled-snake'
+Plug 'lambdalisue/vim-cython-syntax'
+Plug 'nanotech/jellybeans.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vimwiki/vimwiki'
+Plug 'vim-scripts/awk.vim'
+call plug#end()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -17,14 +39,16 @@ set cursorline
 set number
 set title
 set showcmd
-set nomodeline
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Language settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd Filetype c setlocal ts=4 sts=4 sw=4
+autocmd Filetype ts setlocal ts=4 sts=4 sw=4 expandtab
 autocmd Filetype cpp setlocal ts=4 sts=4 sw=4
+autocmd Filetype awk setlocal ts=4 sts=4 sw=4 expandtab
+autocmd Filetype vim setlocal ts=4 sts=4 sw=4 expandtab
 autocmd Filetype julia setlocal ts=4 sts=4 sw=4 expandtab
 autocmd Filetype pyrex setlocal ts=4 sts=4 sw=4 expandtab
 autocmd Filetype python setlocal ts=4 sts=4 sw=4 expandtab
@@ -33,6 +57,32 @@ autocmd Filetype fortran setlocal ts=2 sts=2 sw=2
 let fortran_free_source=1
 let fortran_more_precise=1
 let fortran_do_enddo=1
+let g:default_julia_version = '1.0'
+
+" Language Server
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = {
+\    'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
+\        using LanguageServer;
+\        using Pkg;
+\        import StaticLint;
+\        import SymbolServer;
+\        env_path = dirname(Pkg.Types.Context().env.project_file);
+\        server = LanguageServer.LanguageServerInstance(stdin, stdout, env_path, "");
+\        server.runlinter = true;
+\        run(server);
+\    ']
+\}
+
+" Only apply mappings to buffers with Language Server support.
+function LC_maps()
+    if has_key(g:LanguageClient_serverCommands, &filetype)
+        nmap <buffer> <silent> K <Plug>(lcn-hover)
+        nmap <buffer> <silent> gd <Plug>(lcn-definition)
+        nmap <buffer> <silent> <F2> <Plug>(lcn-rename)
+    endif
+endfunction
+autocmd FileType * call LC_maps()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -45,11 +95,11 @@ map Q gq
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
-	let save_cursor = getpos(".")
-	let old_query = getreg('/')
-	:%s/\s\+$//e
-	call setpos('.', save_cursor)
-	call setreg('/', old_query)
+   let save_cursor = getpos(".")
+   let old_query = getreg('/')
+   :%s/\s\+$//e
+   call setpos('.', save_cursor)
+   call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
 
@@ -65,11 +115,10 @@ nnoremap <leader>d :r !date<CR>
 " Colors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:jellybeans_overrides = {
-\	'background': {'ctermbg': 'black', '256ctermbg': 'black'},
-\	'Todo': {'ctermfg': 'red', 'ctermbg': 'black',
-\		'256ctermfg': 'red', '256ctermbg': 'black',
-\		'attr': 'bold'},
-\	'SpecialKey': {'ctermbg': 'black', '256ctermbg': 'black'},
+\   'background': {'ctermbg': 'black', '256ctermbg': 'black'},
+\   'Todo': {'ctermfg': 'red', 'ctermbg': 'black', '256ctermfg': 'red',
+\            '256ctermbg': 'black', 'attr': 'bold'},
+\   'SpecialKey': {'ctermbg': 'black', '256ctermbg': 'black'},
 \}
 colors jellybeans
 
@@ -78,7 +127,7 @@ colors jellybeans
 " Packages
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Jedi
-let g:jedi#popup_on_dot = 0
+"let g:jedi#popup_on_dot = 0
 
 " CtrlP
 let g:ctrlp_map = '<leader>p'
@@ -122,5 +171,4 @@ autocmd Filetype vimwiki setlocal ts=4 sw=4 expandtab
 :autocmd Filetype vimwiki map <leader>sw :VimwikiSearch<space>
 :autocmd Filetype vimwiki map <leader>dg :VimwikiDiaryGenerateLinks<CR>
 :autocmd Filetype vimwiki map <leader>di :VimwikiDiaryIndex<CR>
-
 
