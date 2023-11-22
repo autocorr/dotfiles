@@ -72,7 +72,7 @@ alias ipy='ipython'
 alias ipy3='ipython3 --profile=three'
 alias ipnb='ipython notebook'
 # julia
-alias jl='julia --banner=no --threads auto'
+alias jl='julia --banner=no --threads=auto'
 # config
 alias zshrc="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
@@ -105,5 +105,15 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/brian/.julia/juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
 
 
